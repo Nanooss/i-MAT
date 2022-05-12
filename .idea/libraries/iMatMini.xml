@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="iMatMini">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/iMatMini/dist/iMatMini.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
