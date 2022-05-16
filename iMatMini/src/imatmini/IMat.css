@@ -1,0 +1,16 @@
+
+/*https://stackoverflow.com/questions/12535397/javafx-hide-slider-divider-of-the-splitpane
+Hittade denna koden under för att gömma den fula dividern
+ */
+
+.split-pane:horizontal > * > .split-pane-divider {
+    -fx-border-color: transparent -fx-box-border transparent #BBBBBB;
+    -fx-background-color: transparent, -fx-inner-border-horizontal;
+    -fx-background-insets: 0, 0 1 0 1;
+}
+
+.split-pane:vertical > * > .split-pane-divider {
+    -fx-border-color:  #BBBBBB transparent -fx-box-border transparent;
+    -fx-background-color: transparent, -fx-inner-border;
+    -fx-background-insets: 0, 1 0 1 0;
+}
