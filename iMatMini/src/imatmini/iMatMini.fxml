@@ -59,7 +59,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <SplitPane dividerPositions="0.1754457050243112" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+            <SplitPane dividerPositions="0.1754" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
               <items>
                   <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="720.0" style="-fx-background-color: #519A7B;">
                      <children>
