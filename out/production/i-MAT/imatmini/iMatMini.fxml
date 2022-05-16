@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" maxHeight="825.0" maxWidth="1280.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
+<AnchorPane id="AnchorPane" maxHeight="825.0" maxWidth="1280.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
     <children>
-      <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="1280.0">
+      <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0">
          <children>
             <AnchorPane fx:id="shopPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="720.0" style="-fx-background-color: #FFF000;">
                <children>
@@ -59,9 +59,9 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <SplitPane dividerPositions="0.1754457050243112" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+            <SplitPane dividerPositions="0.1754" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="720.0" prefWidth="1280.0">
               <items>
-                  <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="102.0" prefWidth="720.0" style="-fx-background-color: #519A7B;">
+                  <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #519A7B;">
                      <children>
                         <TextField fx:id="searchField" layoutX="253.0" layoutY="29.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="476.0" promptText="Sök vara" AnchorPane.leftAnchor="253.0" AnchorPane.topAnchor="29.0">
                            <font>
@@ -69,26 +69,24 @@
                            </font>
                         </TextField>
                         <Button layoutX="634.0" layoutY="38.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleSearchAction" text="Sök" AnchorPane.rightAnchor="30.0" />
-                        <Label layoutX="14.0" layoutY="26.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="140.0" text="i-Mat" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="26.0">
-                           <graphic>
-                              <Button minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleShowAccountAction" opacity="0.0" prefHeight="53.0" prefWidth="140.0" visible="false">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Button>
-                           </graphic>
+                        <Label layoutX="14.0" layoutY="20.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="140.0" text="i-Mat" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="20.0">
                            <font>
                               <Font name="Times New Roman" size="36.0" />
                            </font>
                         </Label>
+                        <Button layoutX="12.0" layoutY="27.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleShowAccountAction" opacity="0.0" prefHeight="35.0" prefWidth="91.0" visible="false">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
-                <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1280.0">
+                <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1280.0">
                      <children>
-                        <SplitPane dividerPositions="0.29797979797979796" minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1280.0">
+                        <SplitPane dividerPositions="0.29797979797979796" minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1280.0">
                           <items>
-                            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="216.0" />
-                            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="725.0" prefWidth="1064.0" />
+                            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="216.0" />
+                            <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1064.0" />
                           </items>
                         </SplitPane>
                      </children>

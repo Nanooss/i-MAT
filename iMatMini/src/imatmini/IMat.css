@@ -3,13 +3,13 @@
 Hittade denna koden under för att gömma den fula dividern
  */
 
-.split-pane:horizontal > * > .split-pane-divider {
+.split-pane:horizontal > * > .split-pane-divider-horizontal {
     -fx-border-color: transparent -fx-box-border transparent #BBBBBB;
     -fx-background-color: transparent, -fx-inner-border-horizontal;
     -fx-background-insets: 0, 0 1 0 1;
 }
 
-.split-pane:vertical > * > .split-pane-divider {
+.split-pane:vertical > * > .split-pane-divider-vertical {
     -fx-border-color:  #BBBBBB transparent -fx-box-border transparent;
     -fx-background-color: transparent, -fx-inner-border;
     -fx-background-insets: 0, 1 0 1 0;
