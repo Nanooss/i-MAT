@@ -75,6 +75,64 @@
                         </AnchorPane>
                         <StackPane prefHeight="150.0" prefWidth="200.0">
                            <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" styleClass="green-outer-border-style">
+                                       <children>
+                                          <AnchorPane layoutX="200.0" layoutY="123.0" prefHeight="256.0" prefWidth="256.0" styleClass="green-border-style">
+                                             <children>
+                                                <Button layoutX="47.0" layoutY="29.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;">
+                                                   <graphic>
+                                                      <ImageView fitHeight="105.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../GreenPictures/GreenCarImage.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <Label alignment="CENTER" layoutX="50.0" layoutY="178.0" prefHeight="56.0" prefWidth="153.0" text="Beställningar" textFill="#519a7b">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <Label layoutX="132.0" layoutY="40.0" prefHeight="53.0" prefWidth="173.0" text="Hej Jag!" textFill="#519a7b">
+                                             <font>
+                                                <Font size="32.0" />
+                                             </font>
+                                          </Label>
+                                          <AnchorPane layoutX="552.0" layoutY="123.0" prefHeight="256.0" prefWidth="256.0" styleClass="green-border-style">
+                                             <children>
+                                                <Label alignment="CENTER" layoutX="50.0" layoutY="178.0" prefHeight="56.0" prefWidth="153.0" text="Dina uppgifter" textFill="#519a7b">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button layoutX="76.0" layoutY="29.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;">
+                                                   <graphic>
+                                                      <ImageView fitHeight="105.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../GreenPictures/GreenDocumentsImage.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                             </children>
+                                          </AnchorPane>
+                                          <Button layoutX="23.0" layoutY="23.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" style="-fx-background-color: #FFFFFF;">
+                                             <graphic>
+                                                <ImageView fitHeight="54.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../GreenPictures/Cross.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
                               <AnchorPane fx:id="accountPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                                  <children>
                                     <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" styleClass="green-outer-border-style">
@@ -140,60 +198,11 @@
                                                 <String fx:value="gray-background" />
                                              </styleClass>
                                           </TextField>
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                                 <children>
-                                    <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" styleClass="green-outer-border-style">
-                                       <children>
-                                          <AnchorPane layoutX="200.0" layoutY="123.0" prefHeight="256.0" prefWidth="256.0" styleClass="green-border-style">
-                                             <children>
-                                                <Button layoutX="47.0" layoutY="29.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;">
-                                                   <graphic>
-                                                      <ImageView fitHeight="105.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../GreenPictures/GreenCarImage.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                   </graphic>
-                                                </Button>
-                                                <Label alignment="CENTER" layoutX="50.0" layoutY="178.0" prefHeight="56.0" prefWidth="153.0" text="Beställningar" textFill="#519a7b">
-                                                   <font>
-                                                      <Font size="20.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </AnchorPane>
-                                          <Label layoutX="132.0" layoutY="40.0" prefHeight="53.0" prefWidth="173.0" text="Hej Jag!" textFill="#519a7b">
-                                             <font>
-                                                <Font size="32.0" />
-                                             </font>
-                                          </Label>
-                                          <AnchorPane layoutX="552.0" layoutY="123.0" prefHeight="256.0" prefWidth="256.0" styleClass="green-border-style">
-                                             <children>
-                                                <Label alignment="CENTER" layoutX="50.0" layoutY="178.0" prefHeight="56.0" prefWidth="153.0" text="Dina uppgifter" textFill="#519a7b">
-                                                   <font>
-                                                      <Font size="20.0" />
-                                                   </font>
-                                                </Label>
-                                                <Button layoutX="76.0" layoutY="29.0" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;">
-                                                   <graphic>
-                                                      <ImageView fitHeight="105.0" fitWidth="146.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../GreenPictures/GreenDocumentsImage.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                   </graphic>
-                                                </Button>
-                                             </children>
-                                          </AnchorPane>
-                                          <Button layoutX="23.0" layoutY="23.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" style="-fx-background-color: #FFFFFF;">
+                                          <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #FFFFFF;">
                                              <graphic>
-                                                <ImageView fitHeight="54.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
-                                                      <Image url="@../GreenPictures/Cross.png" />
+                                                      <Image url="@../GreenPictures/BackwardsarrowWithCircle.png" />
                                                    </image>
                                                 </ImageView>
                                              </graphic>
