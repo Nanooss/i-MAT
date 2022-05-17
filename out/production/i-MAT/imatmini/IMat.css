@@ -14,3 +14,13 @@ Hittade denna koden under för att gömma den fula dividern
     -fx-background-color: transparent, -fx-inner-border;
     -fx-background-insets: 0, 1 0 1 0;
 }
+
+.green-border-style{
+    -fx-border-color:#519a7b;
+    -fx-border-width: 2;
+}
+
+.gray-background{
+    -fx-background-color: #E3E3E3;
+    -fx-color: #808080;
+}
