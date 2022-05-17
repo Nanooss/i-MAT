@@ -21,7 +21,20 @@ Hittade denna koden under för att gömma den fula dividern
     -fx-border-radius: 8px ;
 }
 
+.green-outer-border-style{
+    -fx-border-color: #519a7b;
+    -fx-border-width: 4;
+    -fx-border-radius: 6px ;
+}
+
+.green-border-box{
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #519a7b;
+    -fx-border-width: 4;
+    -fx-border-radius: 16px ;
+}
 .gray-background{
     -fx-background-color: #E3E3E3;
     -fx-color: #808080;
 }
+

@@ -71,75 +71,80 @@
                               </AnchorPane>
                           </items>
                         </SplitPane>
-                        <AnchorPane fx:id="accountPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+                        <StackPane prefHeight="150.0" prefWidth="200.0">
                            <children>
-                              <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" styleClass="green-border-style">
+                              <AnchorPane prefHeight="200.0" prefWidth="1400.0" />
+                              <AnchorPane fx:id="accountPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                                  <children>
-                                    <ComboBox fx:id="cardTypeCombo" layoutX="597.0" layoutY="70.0" prefHeight="45.0" prefWidth="280.0" promptText="Korttyp" styleClass="green-border-style" />
-                                    <TextField fx:id="numberTextField" layoutX="597.0" layoutY="210.0" prefHeight="45.0" prefWidth="280.0" promptText="XXXX-XXXX-XXXX-XXXX">
-                                       <styleClass>
-                                          <String fx:value="green-border-style" />
-                                          <String fx:value="gray-background" />
-                                       </styleClass>
-                                    </TextField>
-                                    <TextField fx:id="nameTextField" layoutX="597.0" layoutY="140.0" prefHeight="45.0" prefWidth="280.0" promptText="Kortinnehavare">
-                                       <styleClass>
-                                          <String fx:value="gray-background" />
-                                          <String fx:value="green-border-style" />
-                                       </styleClass>
-                                    </TextField>
-                                    <ComboBox fx:id="monthCombo" layoutX="597.0" layoutY="280.0" prefHeight="45.0" prefWidth="68.0" promptText="MM" styleClass="green-border-style" />
-                                    <ComboBox fx:id="yearCombo" layoutX="737.0" layoutY="280.0" prefHeight="45.0" prefWidth="64.0" promptText="ÅÅ" styleClass="green-border-style" />
-                                    <Label layoutX="695.0" layoutY="285.0" text="/" textAlignment="RIGHT">
-                                       <font>
-                                          <Font size="24.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField fx:id="cvcField" layoutX="833.0" layoutY="280.0" prefHeight="45.0" prefWidth="43.0" promptText="CVC">
-                                       <styleClass>
-                                          <String fx:value="green-border-style" />
-                                          <String fx:value="gray-background" />
-                                       </styleClass>
-                                    </TextField>
-                                    <Label fx:id="purchasesLabel" layoutX="60.0" layoutY="374.0" text="3747 tidigare inköp hos iMat" />
-                                    <Button layoutX="494.0" layoutY="383.0" mnemonicParsing="false" onAction="#handleDoneAction" text="Klar" />
-                                    <Label alignment="CENTER" layoutX="423.0" layoutY="14.0" prefHeight="35.0" prefWidth="177.0" text="Dina Uppgifter" textFill="#519a7b" underline="true">
-                                       <font>
-                                          <Font name="System Bold" size="24.0" />
-                                       </font>
-                                    </Label>
-                                    <TextField layoutX="143.0" layoutY="140.0" prefHeight="45.0" prefWidth="280.0" promptText="Mail">
-                                       <styleClass>
-                                          <String fx:value="green-border-style" />
-                                          <String fx:value="gray-background" />
-                                       </styleClass>
-                                    </TextField>
-                                    <Button layoutX="288.0" layoutY="350.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="132.0" styleClass="green-border-style" text="Ångra" textFill="#519a7b">
-                                       <font>
-                                          <Font size="24.0" />
-                                       </font>
-                                    </Button>
-                                    <Button layoutX="600.0" layoutY="350.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="132.0" styleClass="green-border-style" text="Spara" textFill="#519a7b">
-                                       <font>
-                                          <Font size="24.0" />
-                                       </font>
-                                    </Button>
-                                    <TextField layoutX="143.0" layoutY="70.0" prefHeight="45.0" prefWidth="280.0" promptText="Namn">
-                                       <styleClass>
-                                          <String fx:value="green-border-style" />
-                                          <String fx:value="gray-background" />
-                                       </styleClass>
-                                    </TextField>
-                                    <TextField layoutX="143.0" layoutY="210.0" prefHeight="45.0" prefWidth="280.0" promptText="Leveransadress">
-                                       <styleClass>
-                                          <String fx:value="green-border-style" />
-                                          <String fx:value="gray-background" />
-                                       </styleClass>
-                                    </TextField>
+                                    <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" styleClass="green-border-style">
+                                       <children>
+                                          <ComboBox fx:id="cardTypeCombo" layoutX="597.0" layoutY="70.0" prefHeight="45.0" prefWidth="280.0" promptText="Korttyp" styleClass="green-border-style" />
+                                          <TextField fx:id="numberTextField" layoutX="597.0" layoutY="210.0" prefHeight="45.0" prefWidth="280.0" promptText="XXXX-XXXX-XXXX-XXXX">
+                                             <styleClass>
+                                                <String fx:value="green-border-style" />
+                                                <String fx:value="gray-background" />
+                                             </styleClass>
+                                          </TextField>
+                                          <TextField fx:id="nameTextField" layoutX="597.0" layoutY="140.0" prefHeight="45.0" prefWidth="280.0" promptText="Kortinnehavare">
+                                             <styleClass>
+                                                <String fx:value="gray-background" />
+                                                <String fx:value="green-border-style" />
+                                             </styleClass>
+                                          </TextField>
+                                          <ComboBox fx:id="monthCombo" layoutX="597.0" layoutY="280.0" prefHeight="45.0" prefWidth="68.0" promptText="MM" styleClass="green-border-style" />
+                                          <ComboBox fx:id="yearCombo" layoutX="737.0" layoutY="280.0" prefHeight="45.0" prefWidth="64.0" promptText="ÅÅ" styleClass="green-border-style" />
+                                          <Label layoutX="695.0" layoutY="285.0" text="/" textAlignment="RIGHT">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="cvcField" layoutX="833.0" layoutY="280.0" prefHeight="45.0" prefWidth="43.0" promptText="CVC">
+                                             <styleClass>
+                                                <String fx:value="green-border-style" />
+                                                <String fx:value="gray-background" />
+                                             </styleClass>
+                                          </TextField>
+                                          <Label fx:id="purchasesLabel" layoutX="60.0" layoutY="374.0" text="3747 tidigare inköp hos iMat" />
+                                          <Button layoutX="494.0" layoutY="383.0" mnemonicParsing="false" onAction="#handleDoneAction" text="Klar" />
+                                          <Label alignment="CENTER" layoutX="423.0" layoutY="14.0" prefHeight="35.0" prefWidth="177.0" text="Dina Uppgifter" textFill="#519a7b" underline="true">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField layoutX="143.0" layoutY="140.0" prefHeight="45.0" prefWidth="280.0" promptText="Mail">
+                                             <styleClass>
+                                                <String fx:value="green-border-style" />
+                                                <String fx:value="gray-background" />
+                                             </styleClass>
+                                          </TextField>
+                                          <Button layoutX="288.0" layoutY="350.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="132.0" styleClass="green-border-style" text="Ångra" textFill="#519a7b">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Button>
+                                          <Button layoutX="600.0" layoutY="350.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="132.0" styleClass="green-border-style" text="Spara" textFill="#519a7b">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField layoutX="143.0" layoutY="70.0" prefHeight="45.0" prefWidth="280.0" promptText="Namn">
+                                             <styleClass>
+                                                <String fx:value="green-border-style" />
+                                                <String fx:value="gray-background" />
+                                             </styleClass>
+                                          </TextField>
+                                          <TextField layoutX="143.0" layoutY="210.0" prefHeight="45.0" prefWidth="280.0" promptText="Leveransadress">
+                                             <styleClass>
+                                                <String fx:value="green-border-style" />
+                                                <String fx:value="gray-background" />
+                                             </styleClass>
+                                          </TextField>
+                                       </children>
+                                    </AnchorPane>
                                  </children>
                               </AnchorPane>
                            </children>
-                        </AnchorPane>
+                        </StackPane>
                      </children>
                   </StackPane>
                </children>
