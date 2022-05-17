@@ -73,7 +73,7 @@
                         </SplitPane>
                         <AnchorPane fx:id="accountPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
                            <children>
-                              <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" styleClass="style">
+                              <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" styleClass="green-border-style">
                                  <children>
                                     <ComboBox fx:id="cardTypeCombo" layoutX="597.0" layoutY="70.0" prefHeight="45.0" prefWidth="280.0" promptText="Korttyp" styleClass="green-border-style" />
                                     <TextField fx:id="numberTextField" layoutX="597.0" layoutY="210.0" prefHeight="45.0" prefWidth="280.0" promptText="XXXX-XXXX-XXXX-XXXX">
