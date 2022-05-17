@@ -16,8 +16,9 @@ Hittade denna koden under för att gömma den fula dividern
 }
 
 .green-border-style{
-    -fx-border-color:#519a7b;
+    -fx-border-color: #519a7b;
     -fx-border-width: 2;
+    -fx-border-radius: 8px ;
 }
 
 .gray-background{

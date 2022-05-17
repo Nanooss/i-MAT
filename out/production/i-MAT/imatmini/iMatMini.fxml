@@ -14,7 +14,7 @@
 
 <AnchorPane id="AnchorPane" maxHeight="825.0" maxWidth="1280.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@IMat.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
     <children>
-      <ScrollPane hbarPolicy="ALWAYS" prefHeight="720.0" prefWidth="1280.0" vbarPolicy="NEVER">
+      <ScrollPane hbarPolicy="NEVER" prefHeight="720.0" prefWidth="1280.0" vbarPolicy="ALWAYS">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="1280.0">
                <children>
@@ -114,12 +114,12 @@
                                           <String fx:value="gray-background" />
                                        </styleClass>
                                     </TextField>
-                                    <Button layoutX="288.0" layoutY="373.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="132.0" style="-fx-border-color: #519a7b; -fx-border-width: 2;" text="Ångra" textFill="#519a7b">
+                                    <Button layoutX="288.0" layoutY="350.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="132.0" styleClass="green-border-style" text="Ångra" textFill="#519a7b">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
                                     </Button>
-                                    <Button layoutX="600.0" layoutY="370.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="132.0" styleClass="green-border-style" text="Spara" textFill="#519a7b">
+                                    <Button layoutX="600.0" layoutY="350.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="132.0" styleClass="green-border-style" text="Spara" textFill="#519a7b">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
