@@ -72,7 +72,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private TextField cvcField;
     @FXML
     private Label purchasesLabel;
-    @FXML private StackPane multiWindows;
+    @FXML private StackPane multiWindow;
     @FXML private Button closeButtonMulti;
     
     // Other variables
@@ -130,7 +130,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     // Navigation
     public void openAccountView() {
         updateAccountPanel();
-        multiWindows.toFront();
+        multiWindow.toFront();
         accountPane.toFront();
     }
 
@@ -141,7 +141,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     public void openUserOptionsView(){
         // behover en uppdate för namnet på profilen har
-        multiWindows.toFront();
+        multiWindow.toFront();
         userMenyAnchorPane.toFront();
     }
 
