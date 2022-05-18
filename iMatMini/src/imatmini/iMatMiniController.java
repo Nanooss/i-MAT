@@ -73,6 +73,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML
     private Label purchasesLabel;
     @FXML private StackPane multiWindows;
+    @FXML private Button closeButtonMulti;
     
     // Other variables
     private final Model model = Model.getInstance();
@@ -129,18 +130,23 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     // Navigation
     public void openAccountView() {
         updateAccountPanel();
+        multiWindows.toFront();
         accountPane.toFront();
     }
 
     public void closeAccountView() {
         updateCreditCard();
-        shopPane.toFront();
+        userMenyAnchorPane.toFront();
     }
 
     public void openUserOptionsView(){
         // behover en uppdate för namnet på profilen har
         multiWindows.toFront();
         userMenyAnchorPane.toFront();
+    }
+
+    public void closeUserOptionsView(){
+        mainPageSplitPane.toFront();
     }
     
     // Shope pane methods
