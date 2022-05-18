@@ -90,7 +90,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         List<Product> matches = model.findProducts(searchField.getText());
         updateProductList(matches);
         System.out.println("# matching products: " + matches.size());
-
     }
     
     @FXML
