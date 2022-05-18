@@ -11,9 +11,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.CartEvent;
@@ -28,7 +26,22 @@ import se.chalmers.cse.dat216.project.ShoppingCartListener;
  * @author oloft
  */
 public class iMatMiniController implements Initializable, ShoppingCartListener {
-    
+
+    // MainPage
+    @FXML
+    private SplitPane mainPageSplitPane;
+
+    // Front Header
+    @FXML
+    private Button ShoppingCartButton;
+
+    @FXML
+    private Button UserIconButton;
+
+    // UserMeny
+    @FXML
+    private AnchorPane userMenyAnchorPane;
+
     // Shopping Pane
     @FXML
     private AnchorPane shopPane;
@@ -93,6 +106,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private void handleDoneAction(ActionEvent event) {
         closeAccountView();
     }
+
+    @FXML
+    private void openUserAction(ActionEvent event) { openUserOptionsView(); }
       
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -103,6 +119,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateBottomPanel();
         
         setupAccountPane();
+
+        mainPageSplitPane.toFront();
         
     }    
     
@@ -116,10 +134,15 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateCreditCard();
         shopPane.toFront();
     }
+
+    public void openUserOptionsView(){
+        // behover en uppdate för namnet på profilen har
+        userMenyAnchorPane.toFront();
+    }
     
     // Shope pane methods
     @Override
-     public void shoppingCartChanged(CartEvent evt) {
+    public void shoppingCartChanged(CartEvent evt) {
         updateBottomPanel();
     }
    
