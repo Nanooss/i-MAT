@@ -1,0 +1,61 @@
+
+/*https://stackoverflow.com/questions/12535397/javafx-hide-slider-divider-of-the-splitpane
+Hittade denna koden under för att gömma den fula dividern
+ */
+
+.split-pane:horizontal > * > .split-pane-divider-horizontal {
+    -fx-border-color: transparent -fx-box-border transparent #BBBBBB;
+    -fx-background-color: transparent, -fx-inner-border-horizontal;
+    -fx-background-insets: 0, 0 1 0 1;
+}
+
+.split-pane:vertical > * > .split-pane-divider-vertical {
+    -fx-border-color:  #BBBBBB transparent -fx-box-border transparent;
+    -fx-background-color: transparent, -fx-inner-border;
+    -fx-background-insets: 0, 1 0 1 0;
+}
+
+.green-border-style{
+    -fx-border-color: #519a7b;
+    -fx-border-width: 2;
+    -fx-border-radius: 8px ;
+    -fx-background-radius: 8;
+}
+
+.green-outer-border-style{
+    -fx-border-color: #519a7b;
+    -fx-border-width: 4;
+    -fx-border-radius: 6px ;
+    -fx-background-radius: 6;
+}
+
+.green-border-box{
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 16px;
+    -fx-border-color: #519a7b;
+    -fx-border-width: 4;
+    -fx-border-radius: 16px;
+}
+.gray-background{
+    -fx-background-color: #E3E3E3;
+    -fx-color: #808080;
+}
+
+.black-thin-round-border{
+    -fx-background-color: #E3E3E3;
+    -fx-border-color: #384B42;
+    -fx-border-radius:12.5;
+    -fx-border-width: 1;
+    -fx-background-radius: 12.5;
+}
+.black-border{
+    -fx-border-color: #384B42;
+    -fx-border-width: 1;
+}
+
+.search-button{
+    -fx-background-color: #E3E3E3;
+    -fx-background-radius: 8px;
+    -fx-border-color: #384B42;
+    -fx-border-radius: 8px;
+}

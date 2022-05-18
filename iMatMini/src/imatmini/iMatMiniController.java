@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.layout.StackPane;
 import se.chalmers.cse.dat216.project.CartEvent;
 import se.chalmers.cse.dat216.project.CreditCard;
 import se.chalmers.cse.dat216.project.Product;
@@ -71,6 +72,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private TextField cvcField;
     @FXML
     private Label purchasesLabel;
+    @FXML private StackPane multiWindows;
     
     // Other variables
     private final Model model = Model.getInstance();
@@ -137,6 +139,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     public void openUserOptionsView(){
         // behover en uppdate för namnet på profilen har
+        multiWindows.toFront();
         userMenyAnchorPane.toFront();
     }
     
