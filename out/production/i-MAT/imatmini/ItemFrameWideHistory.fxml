@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="72.0" prefWidth="622.0" styleClass="green-icon-border2" stylesheets="@IMat.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.ItemFrameWideWthAdd">
+   <children>
+      <ImageView fitHeight="64.0" fitWidth="92.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../GreenPictures/MarabouChokladImage.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="98.0" layoutY="15.0" prefHeight="42.0" prefWidth="232.0" text="Marabou Mjolk Choklad">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="522.0" layoutY="24.0" prefHeight="24.0" prefWidth="69.0" text="16,95 kr" />
+      <Label layoutX="395.0" layoutY="26.0" prefHeight="15.0" prefWidth="20.0" text="1 st" />
+   </children>
+</AnchorPane>
