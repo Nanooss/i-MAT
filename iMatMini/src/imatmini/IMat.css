@@ -86,6 +86,14 @@ Hittade denna koden under för att gömma den fula dividern
 .green-icon-border2{
     -fx-border-radius: 6;
     -fx-border-width: 2;
-    -fx-border-color: #519A7B;
+    -fx-border-color: #384B42;
+    -fx-background-radius: 6;
+}
+
+.black-icon-border-grey-background{
+    -fx-background-color: #E3E3E3;
+    -fx-border-radius: 6;
+    -fx-border-width: 2;
+    -fx-border-color: #384B42;
     -fx-background-radius: 6;
 }

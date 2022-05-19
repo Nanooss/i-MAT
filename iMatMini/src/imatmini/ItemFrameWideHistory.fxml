@@ -13,7 +13,7 @@
             <Image url="@../GreenPictures/MarabouChokladImage.png" />
          </image>
       </ImageView>
-      <Label layoutX="98.0" layoutY="15.0" prefHeight="42.0" prefWidth="232.0" text="Marabou Mjolk Choklad">
+      <Label alignment="CENTER" layoutX="98.0" layoutY="15.0" prefHeight="42.0" prefWidth="232.0" text="Marabou Mjolk Choklad">
          <font>
             <Font size="16.0" />
          </font>
