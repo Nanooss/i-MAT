@@ -8,17 +8,18 @@
 
 <AnchorPane prefHeight="72.0" prefWidth="622.0" styleClass="green-icon-border2" stylesheets="@IMat.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.ItemFrameWideWthAdd">
    <children>
-      <ImageView fitHeight="64.0" fitWidth="92.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="itemFrameImage" fitHeight="64.0" fitWidth="92.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../GreenPictures/MarabouChokladImage.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="98.0" layoutY="15.0" prefHeight="42.0" prefWidth="232.0" text="Marabou Mjolk Choklad">
+      <Label fx:id="itemFrameProductName" alignment="CENTER" layoutX="98.0" layoutY="15.0" prefHeight="42.0" prefWidth="232.0" text="Marabou Mjolk Choklad">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="522.0" layoutY="24.0" prefHeight="24.0" prefWidth="69.0" text="16,95 kr" />
-      <Label layoutX="395.0" layoutY="26.0" prefHeight="15.0" prefWidth="20.0" text="1 st" />
+      <Label fx:id="itemFramePrice" layoutX="522.0" layoutY="24.0" prefHeight="24.0" prefWidth="69.0" text="16,95 kr" />
+      <Label fx:id="ItemFrameAmount" alignment="CENTER_RIGHT" layoutX="385.0" layoutY="27.0" prefHeight="15.0" prefWidth="20.0" text="1" />
+      <Label layoutX="411.0" layoutY="27.0" prefHeight="15.0" prefWidth="20.0" text="st" />
    </children>
 </AnchorPane>
