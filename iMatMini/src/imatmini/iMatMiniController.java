@@ -72,6 +72,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private TextField cvcField;
     @FXML
     private Label purchasesLabel;
+
     @FXML private StackPane multiWindow;
     @FXML private Button closeButtonMulti;
     

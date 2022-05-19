@@ -39,7 +39,7 @@
                               </ScrollPane>
                            </children>
                         </AnchorPane>
-                        <StackPane fx:id="multiWindow" prefHeight="150.0" prefWidth="200.0">
+                        <StackPane  prefHeight="150.0" prefWidth="200.0">
                            <children>
                               <AnchorPane fx:id="userMenyAnchorPane" prefHeight="200.0" prefWidth="200.0">
                                  <children>
