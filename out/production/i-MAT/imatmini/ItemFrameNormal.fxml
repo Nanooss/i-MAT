@@ -9,22 +9,25 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="ItemFrame" maxHeight="224.0" maxWidth="140.0" minHeight="224.0" minWidth="140.0" prefHeight="224.0" prefWidth="140.0" stylesheets="@../../Documents/GitHub/i-MAT/iMatMini/src/imatmini/IMat.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.ItemFrame">
+<fx:root fx:id="ItemFrame" maxHeight="224.0" maxWidth="140.0" minHeight="224.0" minWidth="140.0" prefHeight="224.0" prefWidth="140.0" style="-fx-border-radius: 4;" stylesheets="@IMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="itemFrameImage" fitHeight="100.0" fitWidth="140.0" pickOnBounds="true" preserveRatio="true" styleClass="green-icon-border">
-         <image>
-            <Image url="@../../Documents/GitHub/i-MAT/iMatMini/src/GreenPictures/MarabouChokladImage.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="itemFrameProductName" alignment="TOP_LEFT" layoutX="6.0" layoutY="110.0" prefHeight="69.0" prefWidth="128.0" text="Marabou mjolkchoklad extra test" textFill="WHITE" wrapText="true">
+      <ImageView fx:id="imageView" fitHeight="92.0" fitWidth="128.0" layoutX="6.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" styleClass="green-icon-border" />
+      <Label fx:id="nameLabel" alignment="TOP_LEFT" layoutX="6.0" layoutY="110.0" prefHeight="69.0" prefWidth="128.0" text="Marabou mjolkchoklad" wrapText="true">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="itemFramePrice" layoutX="6.0" layoutY="179.0" prefHeight="14.0" prefWidth="94.0" text="16.95 kr" textFill="WHITE" />
+      <Label fx:id="prizeLabel" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="155.0" prefHeight="37.0" prefWidth="120.0" styleClass="black-thin-round-border" text="16.95 kr ">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <Label fx:id="ecoLabel" layoutX="71.0" layoutY="81.0" text="Ekologisk" textFill="#5cc343">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
       <StackPane fx:id="ItemFrameStackPane" layoutX="10.0" layoutY="198.0" prefHeight="24.0" prefWidth="100.0">
          <children>
-            <Label fx:id="itemFrameLaggTill" alignment="CENTER" contentDisplay="TOP" prefHeight="24.0" prefWidth="100.0" style="-fx-background-color: #E3E3E3; -fx-border-radius: 4; -fx-border-color: #000000; -fx-background-radius: 4;" text="Lägg Till" />
             <AnchorPane fx:id="ItemFrameAddandDeleteItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="120.0" styleClass="black-border-white-background">
                <children>
                   <TextField fx:id="ItemFrameAmount" layoutX="45.0" layoutY="1.0" prefHeight="2.0" prefWidth="20.0">
@@ -33,7 +36,7 @@
                      </font>
                   </TextField>
                   <Label layoutX="67.0" layoutY="3.0" prefHeight="15.0" prefWidth="20.0" text="st" />
-                  <AnchorPane fx:id="itemFrameSubstractItem" onMouseClicked="#subProductAction" prefHeight="24.0" prefWidth="40.0" styleClass="black-border-medium-white-background">
+                  <AnchorPane fx:id="itemFrameSubstractItem" prefHeight="24.0" prefWidth="40.0" styleClass="black-border-medium-white-background">
                      <children>
                         <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="13.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -42,7 +45,7 @@
                         </ImageView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="itemFrameAddItem" layoutX="80.0" onMouseClicked="#addProductAction" prefHeight="24.0" prefWidth="40.0" styleClass="black-border-medium-white-background">
+                  <AnchorPane fx:id="itemFrameAddItem" layoutX="80.0" prefHeight="24.0" prefWidth="40.0" styleClass="black-border-medium-white-background">
                      <children>
                         <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="13.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -53,11 +56,16 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
+            <AnchorPane prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: -fx-background;">
+               <children>
+                  <Label fx:id="itemFrameLaggTill" alignment="CENTER" contentDisplay="TOP" layoutX="10.0" prefHeight="24.0" prefWidth="100.0" style="-fx-background-color: #E3E3E3; -fx-border-radius: 4; -fx-border-color: #000000; -fx-background-radius: 4;" text="Lägg Till" />
+               </children>
+            </AnchorPane>
          </children>
       </StackPane>
    </children>
    <styleClass>
       <String fx:value="green-icon-border" />
-      <String fx:value="green-background" />
+      <String fx:value="black-border" />
    </styleClass>
-</AnchorPane>
+</fx:root>
