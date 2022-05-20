@@ -133,6 +133,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         loadUser();
 
+        model.getShoppingCart().clear();
+
     }
 
     public void saveUser(){

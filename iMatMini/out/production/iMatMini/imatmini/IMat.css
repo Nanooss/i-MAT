@@ -97,3 +97,10 @@ Hittade denna koden under för att gömma den fula dividern
     -fx-border-color: #384B42;
     -fx-background-radius: 6;
 }
+
+.black-border2 {
+    -fx-border-color: #000000;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
