@@ -59,3 +59,41 @@ Hittade denna koden under för att gömma den fula dividern
     -fx-border-color: #384B42;
     -fx-border-radius: 8px;
 }
+
+.green-icon-border{
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+    -fx-border-color: #519A7B;
+    -fx-background-radius: 4;
+}
+
+.green-background{
+    -fx-background-color: #519A7B;
+}
+
+.black-border-white-background{
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #384B42;
+    -fx-border-width: 1;
+}
+
+.black-border-medium-white-background{
+    -fx-background-color: #E3E3E3;
+    -fx-border-color: #384B42;
+    -fx-border-width: 1;
+}
+
+.green-icon-border2{
+    -fx-border-radius: 6;
+    -fx-border-width: 2;
+    -fx-border-color: #384B42;
+    -fx-background-radius: 6;
+}
+
+.black-icon-border-grey-background{
+    -fx-background-color: #E3E3E3;
+    -fx-border-radius: 6;
+    -fx-border-width: 2;
+    -fx-border-color: #384B42;
+    -fx-background-radius: 6;
+}

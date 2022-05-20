@@ -8,6 +8,8 @@ package imatmini;
 import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.Flow;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,11 +17,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
-import se.chalmers.cse.dat216.project.CartEvent;
-import se.chalmers.cse.dat216.project.CreditCard;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingCartListener;
+import se.chalmers.cse.dat216.project.*;
 
 
 /**
@@ -54,16 +52,15 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private Label costLabel;
     @FXML
     private FlowPane productsFlowPane;
+    @FXML
+    private FlowPane productField;
     
     // Account Pane
     @FXML
     private AnchorPane accountPane;
     @FXML 
     ComboBox cardTypeCombo;
-    @FXML
-    private TextField numberTextField;
-    @FXML
-    private TextField nameTextField;
+
     @FXML 
     private ComboBox monthCombo;
     @FXML
@@ -72,9 +69,18 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private TextField cvcField;
     @FXML
     private Label purchasesLabel;
-
+    @FXML private Label greetingMulti;
     @FXML private StackPane multiWindow;
     @FXML private Button closeButtonMulti;
+
+    // Användaruppgifter text
+    @FXML private TextField dinaUppgifterNamn;
+    @FXML private TextField dinaUppgifterEfternamn;
+    @FXML private TextField dinaUppgifterMail;
+    @FXML private TextField dinaUppgifterLeveransadress;
+    @FXML private TextField dinaUppgifter;
+    @FXML private TextField numberTextField;
+    @FXML private TextField nameTextField;
     
     // Other variables
     private final Model model = Model.getInstance();
@@ -124,8 +130,25 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         setupAccountPane();
 
         mainPageSplitPane.toFront();
-        
-    }    
+
+        loadUser();
+
+    }
+
+    public void saveUser(){
+        model.getCustomer().setFirstName(dinaUppgifterNamn.getText());
+        model.getCustomer().setLastName(dinaUppgifterEfternamn.getText());
+        model.getCustomer().setEmail(dinaUppgifterMail.getText());
+        model.getCustomer().setAddress(dinaUppgifterLeveransadress.getText());
+        System.out.println("#User saved");
+    }
+
+    public void loadUser(){
+        dinaUppgifterNamn.setText(model.getCustomer().getFirstName());
+        dinaUppgifterEfternamn.setText(model.getCustomer().getLastName());
+        dinaUppgifterMail.setText(model.getCustomer().getEmail());
+        dinaUppgifterLeveransadress.setText(model.getCustomer().getAddress());
+    }
     
     // Navigation
     public void openAccountView() {
@@ -141,6 +164,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     public void openUserOptionsView(){
         // behover en uppdate för namnet på profilen har
+        greetingMulti.setText("Hej " + model.getCustomer().getFirstName() + "!");
         multiWindow.toFront();
         userMenyAnchorPane.toFront();
     }
@@ -158,11 +182,11 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     
     private void updateProductList(List<Product> products) {
 
-        productsFlowPane.getChildren().clear();
+        productField.getChildren().clear();
 
         for (Product product : products) {
 
-            productsFlowPane.getChildren().add(new ProductPanel(product));
+            productField.getChildren().add(new ProductPanel(product));
         }
 
     }

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="72.0" prefWidth="622.0" styleClass="green-icon-border2" stylesheets="@IMat.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.ItemFrameWideWthAdd">
+   <children>
+      <ImageView fx:id="itemFrameImage" fitHeight="64.0" fitWidth="92.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../GreenPictures/MarabouChokladImage.png" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="ItemFrameAddandDeleteItem" layoutX="347.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="24.0" prefWidth="120.0" styleClass="black-border-white-background">
+         <children>
+            <TextField fx:id="ItemFrameAmount" layoutX="45.0" layoutY="1.0" prefHeight="2.0" prefWidth="20.0">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </TextField>
+            <Label layoutX="67.0" layoutY="3.0" prefHeight="15.0" prefWidth="20.0" text="st" />
+            <AnchorPane fx:id="itemFrameSubstractItem" onMouseClicked="#subProductAction" prefHeight="24.0" prefWidth="40.0" styleClass="black-border-medium-white-background">
+               <children>
+                  <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="13.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../GreenPictures/GreenMinus.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="itemFrameAddItem" layoutX="80.0" onMouseClicked="#addProductAction" prefHeight="24.0" prefWidth="40.0" styleClass="black-border-medium-white-background">
+               <children>
+                  <ImageView fitHeight="14.0" fitWidth="14.0" layoutX="13.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../GreenPictures/GreenPlus.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <Label fx:id="itemFrameProductName" alignment="CENTER" layoutX="98.0" layoutY="15.0" prefHeight="42.0" prefWidth="232.0" text="Marabou Mjolk Choklad">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="itemFramePrice" layoutX="522.0" layoutY="24.0" prefHeight="24.0" prefWidth="69.0" text="16,95 kr" />
+   </children>
+</AnchorPane>
