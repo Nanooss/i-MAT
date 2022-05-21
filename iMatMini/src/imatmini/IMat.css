@@ -104,3 +104,25 @@ Hittade denna koden under för att gömma den fula dividern
     -fx-border-radius: 8;
     -fx-background-radius: 8;
 }
+
+.varukorg-anchorpane {
+    -fx-background-color: #f8f8f8;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-color: #000000;
+}
+
+.varukorg-options-anchorpane {
+    -fx-background-color: #E3E3E3;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-color: #000000;
+}
+
+.button-varukorg {
+    -fx-background-color: #E3E3E3;
+    -fx-border-radius: 6;
+    -fx-border-width: 3;
+    -fx-background-radius: 6;
+    -fx-border-color: #519A7B;
+}

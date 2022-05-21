@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@IMat.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@IMat.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.iMatMiniController">
     <children>
       <ScrollPane hbarPolicy="NEVER" prefHeight="720.0" prefWidth="1280.0" styleClass="black-border" vbarPolicy="ALWAYS">
         <content>
@@ -22,23 +22,6 @@
                <children>
                   <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0">
                      <children>
-                        <AnchorPane fx:id="shopPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="240.0" prefWidth="720.0" style="-fx-background-color: #FFF000;">
-                           <children>
-                              <AnchorPane layoutY="501.0" prefHeight="59.0" prefWidth="720.0" style="-fx-background-color: #519A7B;">
-                                 <children>
-                                    <Button layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleClearCartAction" text="Töm" />
-                                    <Button layoutX="663.0" layoutY="16.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" text="Köp" />
-                                    <Label fx:id="itemsLabel" layoutX="139.0" layoutY="21.0" prefHeight="17.0" prefWidth="150.0" text="Antal varor: 3456" />
-                                    <Label fx:id="costLabel" layoutX="479.0" layoutY="21.0" text="Kostnad: 3456.60" />
-                                 </children>
-                              </AnchorPane>
-                              <ScrollPane hbarPolicy="NEVER" layoutY="102.0" prefHeight="398.0" prefWidth="720.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="102.0">
-                                 <content>
-                                    <FlowPane fx:id="productsFlowPane" prefHeight="395.0" prefWidth="718.0" style="-fx-background-color: #5e6d70;" vgap="4.0" />
-                                 </content>
-                              </ScrollPane>
-                           </children>
-                        </AnchorPane>
                         <StackPane fx:id="multiWindow" prefHeight="150.0" prefWidth="200.0">
                            <children>
                               <AnchorPane fx:id="userMenyAnchorPane" prefHeight="200.0" prefWidth="200.0">
@@ -234,6 +217,71 @@
                               </AnchorPane>
                           </items>
                         </SplitPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane fx:id="shopPane" layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" styleClass="varukorg-anchorpane">
+                                 <children>
+                                    <AnchorPane layoutX="669.0" prefHeight="432.0" prefWidth="355.0" styleClass="varukorg-options-anchorpane">
+                                       <children>
+                                          <Button alignment="CENTER" layoutX="57.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" prefHeight="53.0" prefWidth="242.0" styleClass="button-varukorg" text="Till Kassan" textFill="#519a7b">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Button>
+                                          <Button alignment="CENTER" layoutX="57.0" layoutY="90.0" mnemonicParsing="false" onAction="#handleClearCartAction" prefHeight="53.0" prefWidth="242.0" styleClass="button-varukorg" text="Töm Varukorg" textFill="#519a7b">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <Label alignment="CENTER" layoutX="67.0" layoutY="20.0" prefHeight="53.0" prefWidth="546.0" text="Varukorg" textFill="#519a7b" underline="true">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Button layoutX="28.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="18.0" prefWidth="18.0" style="-fx-background-color: #f8f8f8;">
+                                       <graphic>
+                                          <ImageView fx:id="cartCloseButton" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../GreenPictures/Icons/close.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <ScrollPane hbarPolicy="NEVER" layoutX="25.0" layoutY="73.0" prefHeight="268.0" prefWidth="630.0">
+                                      <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <FlowPane fx:id="productsFlowPane" prefHeight="268.0" prefWidth="622.0" />
+                                             </children>
+                                          </AnchorPane>
+                                      </content>
+                                    </ScrollPane>
+                                    <Label fx:id="costLabel" layoutX="524.0" layoutY="378.0" prefHeight="53.0" prefWidth="177.0" text="123.45 kr" textFill="#519a7b">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" layoutX="335.0" layoutY="378.0" prefHeight="53.0" prefWidth="177.0" text="Total:" textFill="#519a7b">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER_RIGHT" layoutX="335.0" layoutY="339.0" prefHeight="53.0" prefWidth="177.0" text="Antal Varor:" textFill="#519a7b">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="itemsLabel" layoutX="524.0" layoutY="339.0" prefHeight="53.0" prefWidth="177.0" text="5 st" textFill="#519a7b">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </StackPane>
                </children>
