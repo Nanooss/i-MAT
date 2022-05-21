@@ -417,7 +417,7 @@
                                     </AnchorPane>
                                     <AnchorPane prefHeight="508.0" prefWidth="700.0" style="-fx-background-color: #f8f8f8;">
                                        <children>
-                                          <Button alignment="CENTER" layoutX="405.0" layoutY="427.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="256.0" styleClass="button-varukorg" text="Bekräfta" textFill="#519a7b">
+                                          <Button alignment="CENTER" layoutX="405.0" layoutY="427.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="256.0" styleClass="button-varukorg" text="Slutför Beställning" textFill="#519a7b">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
@@ -432,7 +432,31 @@
                                                 <Font size="32.0" />
                                              </font>
                                           </Label>
-                                          <AnchorPane layoutX="56.0" layoutY="115.0" prefHeight="215.0" prefWidth="588.0" />
+                                          <AnchorPane layoutX="56.0" layoutY="115.0" maxWidth="588.0" minWidth="588.0" prefHeight="215.0" prefWidth="588.0" style="-fx-border-color: #000000;">
+                                             <children>
+                                                <AnchorPane prefHeight="75.0" prefWidth="588.0" style="-fx-border-color: #000000;">
+                                                   <children>
+                                                      <Label alignment="CENTER" layoutX="39.0" layoutY="23.0" prefHeight="30.0" prefWidth="509.0" text="Förnamn Efternamn">
+                                                         <font>
+                                                            <Font size="20.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </AnchorPane>
+                                                <Label layoutX="15.0" layoutY="100.0" text="Kortinnehavare:" />
+                                                <Label layoutX="15.0" layoutY="130.0" text="Kort-nr:" />
+                                                <Label layoutX="15.0" layoutY="160.0" text="Giltig t.o.m:" />
+                                                <Label layoutX="107.0" layoutY="100.0" text="Kortinnehavare" />
+                                                <Label layoutX="65.0" layoutY="130.0" text="xxxx-xxxx-xxxx-xxxx" />
+                                                <Label layoutX="87.0" layoutY="160.0" text="MM/ÅÅ" />
+                                                <Label layoutX="319.0" layoutY="99.0" text="Email:" />
+                                                <Label layoutX="319.0" layoutY="130.0" text="Adress:" />
+                                                <Label layoutX="319.0" layoutY="160.0" text="Total:" />
+                                                <Label layoutX="358.0" layoutY="160.0" text="x kr" />
+                                                <Label layoutX="365.0" layoutY="130.0" text="Adress" />
+                                                <Label layoutX="359.0" layoutY="100.0" text="Kanelbanan@gmail.se" />
+                                             </children>
+                                          </AnchorPane>
                                        </children>
                                     </AnchorPane>
                                  </children>
