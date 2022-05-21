@@ -121,3 +121,10 @@
     -fx-background-radius: 6;
     -fx-font-size: 16;
 }
+
+.multi-best-green{
+    -fx-border-radius: 6;
+    -fx-border-width: 4;
+    -fx-border-color: #519A7B;
+    -fx-background-radius: 6;
+}
