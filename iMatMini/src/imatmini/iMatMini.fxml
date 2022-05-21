@@ -368,12 +368,12 @@
                                     </AnchorPane>
                                     <AnchorPane fx:id="wizzardVarukorg" prefHeight="508.0" prefWidth="700.0" style="-fx-background-color: #f8f8f8;">
                                        <children>
-                                          <Button alignment="CENTER" layoutX="405.0" layoutY="427.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="256.0" styleClass="button-varukorg" text="Bekräfta" textFill="#519a7b">
+                                          <Button fx:id="wizzardCartConfirmButton" alignment="CENTER" layoutX="405.0" layoutY="427.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="256.0" styleClass="button-varukorg" text="Bekräfta" textFill="#519a7b">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
                                           </Button>
-                                          <Button alignment="CENTER" layoutX="39.0" layoutY="427.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="256.0" styleClass="button-varukorg" text="Tillbaka" textFill="#519a7b">
+                                          <Button fx:id="wizzardCartBackButton" alignment="CENTER" layoutX="39.0" layoutY="427.0" mnemonicParsing="false" prefHeight="64.0" prefWidth="256.0" styleClass="button-varukorg" text="Tillbaka" textFill="#519a7b">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
@@ -396,6 +396,41 @@
                                     </AnchorPane>
                                  </children>
                               </StackPane>
+                              <ImageView fx:id="wizzardCartImage" fitHeight="40.0" fitWidth="40.0" layoutX="370.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../GreenPictures/Icons/shopping_cart.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="wizzardLocationImage" fitHeight="40.0" fitWidth="40.0" layoutX="710.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../GreenPictures/Icons/Location.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="wizzardConfirmationImage" fitHeight="40.0" fitWidth="40.0" layoutX="880.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../GreenPictures/Icons/description.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fx:id="wizzardMoneyImage" fitHeight="40.0" fitWidth="40.0" layoutX="540.0" layoutY="155.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../GreenPictures/Icons/payment.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="13.0" fitWidth="105.0" layoutX="420.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../GreenPictures/Icons/ArrowRight.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="13.0" fitWidth="105.0" layoutX="590.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../GreenPictures/Icons/ArrowRight.png" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="13.0" fitWidth="105.0" layoutX="760.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../GreenPictures/Icons/ArrowRight.png" />
+                                 </image>
+                              </ImageView>
                            </children>
                         </AnchorPane>
                      </children>
