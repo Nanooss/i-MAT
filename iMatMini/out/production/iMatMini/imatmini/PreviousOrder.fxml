@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="100.0" prefWidth="640.0" styleClass="black-border2" stylesheets="@IMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root onMouseClicked="#expandOrder" prefHeight="100.0" prefWidth="640.0" styleClass="black-border2" stylesheets="@IMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="34.0" layoutY="24.0" prefHeight="25.0" prefWidth="67.0" text="order-nr:">
          <font>

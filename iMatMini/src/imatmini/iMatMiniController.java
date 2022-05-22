@@ -125,9 +125,17 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
 
     //Orders
-    @FXML private AnchorPane multiGamlaBPane;
-    @FXML private AnchorPane multimultiGamla;
-    @FXML private FlowPane oldOrdersFlowPane;
+    @FXML AnchorPane multiGamlaBPane;
+    @FXML AnchorPane multimultiGamla;
+    @FXML FlowPane oldOrdersFlowPane;
+    @FXML AnchorPane expandedOrderView;
+    @FXML Label orderNumber;
+    @FXML Label dateOldOrder;
+    @FXML Label totalPriceOldOrder;
+    @FXML FlowPane multigammelgam;
+
+    //Category
+    @FXML FlowPane categoryMenu;
 
 
     // Shop pane actions
@@ -179,6 +187,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         setupAccountPane();
         setupPayment();
         loadOrders();
+        loadCategorys();
 
 
 
@@ -191,7 +200,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
    
     
-    private void updateProductList(List<Product> products) {
+    void updateProductList(List<Product> products) {
 
         productField.getChildren().clear();
 
@@ -456,4 +465,29 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
             i+=1;
         }
     }
+
+    public void closeExpanded(){
+        expandedOrderView.toBack();
+    }
+
+    //Category
+
+    public void loadCategorys(){
+        categoryMenu.getChildren().clear();
+        String categorys[] = {
+                "Mejeri",
+                "Chark",
+                "Dricka",
+                "Sötsaker",
+                "Bröd",
+                "Frukt & Grönt",
+                "Kolonial"
+
+        };
+        for ( String category : categorys) {
+            categoryMenu.getChildren().add(new categoryMenuButtons(category,this));
+        }
+    }
+
+
 }

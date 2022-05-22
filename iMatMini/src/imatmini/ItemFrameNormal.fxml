@@ -16,7 +16,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label fx:id="prizeLabel" alignment="CENTER_RIGHT" layoutX="10.0" layoutY="155.0" prefHeight="37.0" prefWidth="120.0" styleClass="black-thin-round-border" text="16.95 kr ">
+      <Label fx:id="prizeLabel" alignment="CENTER" layoutX="10.0" layoutY="155.0" prefHeight="24.0" prefWidth="120.0" styleClass="black-thin-round-border" text="16.95 kr ">
          <font>
             <Font size="18.0" />
          </font></Label>

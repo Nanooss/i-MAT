@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -70,6 +71,31 @@ public class historyItem extends AnchorPane {
 
     public String setDate(){
         return String.valueOf(order.getDate().getDate()) +"-"+String.valueOf(order.getDate().getMonth()+1) +"-"+ String.valueOf(order.getDate().getYear()+1900);
+    }
+
+    public void expandOrder(){
+        iMatController.expandedOrderView.toFront();
+        iMatController.orderNumber.setText(String.valueOf(order.getOrderNumber()));
+        iMatController.dateOldOrder.setText(setDate());
+        double totalPrice = 0;
+        for (ShoppingItem item : order.getItems()){
+            totalPrice += item.getTotal();
+        }
+        iMatController.totalPriceOldOrder.setText(String.valueOf(Math.round(totalPrice)) + "Kr");
+        iMatController.multigammelgam.getChildren().clear();
+        System.out.println(model.getOrders());
+        ShoppingItem list[] = order.getItems().toArray(new ShoppingItem[0]);
+        int i = 0;
+        for ( ShoppingItem order : list) {
+            iMatController.multigammelgam.getChildren().add(new wideHistory(order, i ,iMatController));
+            i+=1;
+        }
+
+        /*@FXML Label orderNumber;
+        @FXML Label dateOldOrder;
+        @FXML Label totalPriceOldOrder;
+        @FXML FlowPane multigammelgam;*/
+
     }
 
 
