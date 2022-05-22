@@ -1,19 +1,4 @@
 
-/*https://stackoverflow.com/questions/12535397/javafx-hide-slider-divider-of-the-splitpane
-Hittade denna koden under för att gömma den fula dividern
- */
-
-.split-pane:horizontal > * > .split-pane-divider-horizontal {
-    -fx-border-color: transparent -fx-box-border transparent #BBBBBB;
-    -fx-background-color: transparent, -fx-inner-border-horizontal;
-    -fx-background-insets: 0, 0 1 0 1;
-}
-
-.split-pane:vertical > * > .split-pane-divider-vertical {
-    -fx-border-color:  #BBBBBB transparent -fx-box-border transparent;
-    -fx-background-color: transparent, -fx-inner-border;
-    -fx-background-insets: 0, 1 0 1 0;
-}
 
 .green-border-style{
     -fx-border-color: #519a7b;
@@ -48,6 +33,7 @@ Hittade denna koden under för att gömma den fula dividern
     -fx-border-width: 1;
     -fx-background-radius: 12.5;
 }
+
 .black-border{
     -fx-border-color: #384B42;
     -fx-border-width: 1;
@@ -103,4 +89,42 @@ Hittade denna koden under för att gömma den fula dividern
     -fx-border-width: 1;
     -fx-border-radius: 8;
     -fx-background-radius: 8;
+}
+
+.varukorg-anchorpane {
+    -fx-background-color: #f8f8f8;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-color: #000000;
+}
+
+.varukorg-options-anchorpane {
+    -fx-background-color: #E3E3E3;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-color: #000000;
+}
+
+.button-varukorg {
+    -fx-background-color: #E3E3E3;
+    -fx-border-radius: 6;
+    -fx-border-width: 3;
+    -fx-background-radius: 6;
+    -fx-border-color: #519A7B;
+}
+
+.wizzard-text-fields{
+    -fx-background-color: #E3E3E3;
+    -fx-border-radius: 6;
+    -fx-border-width: 2;
+    -fx-border-color: #519a7b;
+    -fx-background-radius: 6;
+    -fx-font-size: 16;
+}
+
+.multi-best-green{
+    -fx-border-radius: 6;
+    -fx-border-width: 4;
+    -fx-border-color: #519A7B;
+    -fx-background-radius: 6;
 }

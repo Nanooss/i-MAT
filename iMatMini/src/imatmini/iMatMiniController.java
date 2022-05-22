@@ -85,6 +85,17 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     // Other variables
     private final Model model = Model.getInstance();
 
+
+    //Wizard
+    //@FXML private Button ShoppingCartButton;
+    @FXML private AnchorPane wizzardPane;
+    @FXML private AnchorPane wizzardVarukorg;
+    @FXML private AnchorPane wizzardBetalkort;
+    @FXML private AnchorPane wizardAdress;
+    @FXML private AnchorPane wizardConfirm;
+
+
+
     // Shop pane actions
     @FXML
     private void handleShowAccountAction(ActionEvent event) {
@@ -135,46 +146,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         model.getShoppingCart().clear();
 
-    }
 
-    public void saveUser(){
-        model.getCustomer().setFirstName(dinaUppgifterNamn.getText());
-        model.getCustomer().setLastName(dinaUppgifterEfternamn.getText());
-        model.getCustomer().setEmail(dinaUppgifterMail.getText());
-        model.getCustomer().setAddress(dinaUppgifterLeveransadress.getText());
-        System.out.println("#User saved");
-    }
 
-    public void loadUser(){
-        dinaUppgifterNamn.setText(model.getCustomer().getFirstName());
-        dinaUppgifterEfternamn.setText(model.getCustomer().getLastName());
-        dinaUppgifterMail.setText(model.getCustomer().getEmail());
-        dinaUppgifterLeveransadress.setText(model.getCustomer().getAddress());
     }
-    
-    // Navigation
-    public void openAccountView() {
-        updateAccountPanel();
-        multiWindow.toFront();
-        accountPane.toFront();
-    }
-
-    public void closeAccountView() {
-        updateCreditCard();
-        userMenyAnchorPane.toFront();
-    }
-
-    public void openUserOptionsView(){
-        // behover en uppdate för namnet på profilen har
-        greetingMulti.setText("Hej " + model.getCustomer().getFirstName() + "!");
-        multiWindow.toFront();
-        userMenyAnchorPane.toFront();
-    }
-
-    public void closeUserOptionsView(){
-        mainPageSplitPane.toFront();
-    }
-    
     // Shope pane methods
     @Override
     public void shoppingCartChanged(CartEvent evt) {
@@ -248,4 +222,95 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         yearCombo.getItems().addAll(model.getYears());
         
     }
+
+    //MultiWindow
+    // Navigation
+    public void openUserOptionsView(){
+        // behover en uppdate för namnet på profilen har
+        greetingMulti.setText("Hej " + model.getCustomer().getFirstName() + "!");
+        multiWindow.toFront();
+        userMenyAnchorPane.toFront();
+    }
+
+    public void closeUserOptionsView(){
+        mainPageSplitPane.toFront();
+    }
+
+    public void openAccountView() {
+        updateAccountPanel();
+        multiWindow.toFront();
+        accountPane.toFront();
+    }
+
+    public void closeAccountView() {
+        updateCreditCard();
+        userMenyAnchorPane.toFront();
+    }
+
+    //AccountPane
+    public void saveUser(){
+        model.getCustomer().setFirstName(dinaUppgifterNamn.getText());
+        model.getCustomer().setLastName(dinaUppgifterEfternamn.getText());
+        model.getCustomer().setEmail(dinaUppgifterMail.getText());
+        model.getCustomer().setAddress(dinaUppgifterLeveransadress.getText());
+        System.out.println("#User saved");
+    }
+
+    public void loadUser(){
+        dinaUppgifterNamn.setText(model.getCustomer().getFirstName());
+        dinaUppgifterEfternamn.setText(model.getCustomer().getLastName());
+        dinaUppgifterMail.setText(model.getCustomer().getEmail());
+        dinaUppgifterLeveransadress.setText(model.getCustomer().getAddress());
+    }
+
+
+    //WizzardPane
+    //Navigation
+    public void openWizard(){
+        wizzardPane.toFront();
+    }
+    public void backToHome(){
+        mainPageSplitPane.toFront();
+    }
+    public void nextButtonCart(){
+        saveCart();
+        wizzardBetalkort.toFront();
+    }
+    public void nextButtonPayment(){
+        savePayment();
+        wizardAdress.toFront();
+    }
+    public void nextButtonAdress(){
+        saveAdress();
+        wizardConfirm.toFront();
+    }
+    public void confirmButton(){
+        loadConfirm();
+        model.placeOrder();
+    }
+    public void backButtonCart(){
+        saveCart();
+        mainPageSplitPane.toFront();
+    }
+    public void backButtonPayment(){
+        savePayment();
+        wizzardVarukorg.toFront();
+    }
+    public void backButtonAdress(){
+        saveAdress();
+        wizzardBetalkort.toFront();
+    }
+    public void backButtonConfirm(){
+        wizardAdress.toFront();
+    }
+
+    //Functionality
+    public void saveCart(){}
+    public void savePayment(){}
+    public void saveAdress(){}
+    public void loadConfirm(){}
+
+    //Backend
+
+
 }
