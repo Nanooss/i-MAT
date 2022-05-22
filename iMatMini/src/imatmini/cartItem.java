@@ -23,24 +23,26 @@ import java.io.IOException;
  */
 public class cartItem extends AnchorPane {
 
-    @FXML ImageView imageView;
-    @FXML Label nameLabel;
-    @FXML Label prizeLabel;
-    @FXML Label ecoLabel;
-    @FXML Label itemFrameLaggTill;
-    @FXML AnchorPane ItemFrameAddandDeleteItem;
-    @FXML TextField ItemFrameAmount;
+    //@FXML
+    @FXML private ImageView itemFrameImage;
+    @FXML private AnchorPane ItemFrameAddandDeleteItem;
+    @FXML private TextField ItemFrameAmount;
+    @FXML private AnchorPane itemFrameSubstractItem;
+    @FXML private AnchorPane itemFrameAddItem;
+    @FXML private Label itemFrameProductName;
+    @FXML private Label itemFramePrice;
 
     private Model model = Model.getInstance();
-
+    iMatMiniController iMatController;
     private Product product;
 
     private final static double kImageWidth = 100.0;
     private final static double kImageRatio = 0.75;
 
-    public cartItem(Product product) {
-        
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ItemFrameNormal.fxml"));
+    public cartItem(Product product, int index, iMatMiniController parentController) {
+
+        iMatController = parentController;
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ItemFrameWideWthAdd.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -51,12 +53,13 @@ public class cartItem extends AnchorPane {
         }
 
         this.product = product;
-        nameLabel.setText(product.getName());
-        prizeLabel.setText(String.format("%.2f", product.getPrice()) + " " + product.getUnit());
-        imageView.setImage(model.getImage(product, kImageWidth, kImageWidth*kImageRatio));
-        if (!product.isEcological()) {
+        itemFrameProductName.setText(product.getName());
+        itemFramePrice.setText(String.valueOf(model.getShoppingCart().getItems().get(index).getTotal()) + " " + "kr");
+        itemFrameImage.setImage(model.getImage(product, kImageWidth, kImageWidth*kImageRatio));
+        ItemFrameAmount.setText(String.valueOf(Math.round(model.getShoppingCart().getItems().get(index).getAmount())));
+        /*if (!product.isEcological()) {
             ecoLabel.setText("");
-        }
+        }*/
     }
     
 
@@ -76,6 +79,13 @@ public class cartItem extends AnchorPane {
         try{
             model.getShoppingCart().getItems().get(index).setAmount(Double.parseDouble(ItemFrameAmount.getText()));
             System.out.println(model.getShoppingCart().getItems().get(index).getTotal());
+            iMatController.updateShoppingCart(model.getShoppingCart().getItems());
+            if (model.getShoppingCart().getItems().get(index).getAmount() <= 0){
+                System.out.println("#Removed " + model.getShoppingCart().getItems().get(index).getProduct().getName());
+                model.getShoppingCart().getItems().remove(index);
+                ItemFrameAddandDeleteItem.toBack();
+                iMatController.updateShoppingCart(model.getShoppingCart().getItems());
+            }
         }
 
         catch(Exception e){
@@ -90,19 +100,22 @@ public class cartItem extends AnchorPane {
         model.getShoppingCart().getItems().get(index).setAmount(model.getShoppingCart().getItems().get(index).getAmount() + 1);
         ItemFrameAmount.setText(String.valueOf(Math.round(model.getShoppingCart().getItems().get(index).getAmount())));
         System.out.println(model.getShoppingCart().getItems().get(index).getTotal());
+        iMatController.updateShoppingCart(model.getShoppingCart().getItems());
 
     }
     public void multiSub(){
         int index = findIndex();
         model.getShoppingCart().getItems().get(index).setAmount(model.getShoppingCart().getItems().get(index).getAmount() - 1);
         if (model.getShoppingCart().getItems().get(index).getAmount() <= 0){
+            System.out.println("#Removed " + model.getShoppingCart().getItems().get(index).getProduct().getName());
             model.getShoppingCart().getItems().remove(index);
             ItemFrameAddandDeleteItem.toBack();
-
+            iMatController.updateShoppingCart(model.getShoppingCart().getItems());
         }
         else{
             ItemFrameAmount.setText(String.valueOf(Math.round(model.getShoppingCart().getItems().get(index).getAmount())));
             System.out.println(model.getShoppingCart().getItems().get(index).getTotal());
+            iMatController.updateShoppingCart(model.getShoppingCart().getItems());
         }
 
 

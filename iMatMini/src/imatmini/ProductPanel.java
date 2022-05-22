@@ -40,7 +40,7 @@ public class ProductPanel extends AnchorPane {
     private final static double kImageRatio = 0.75;
 
     public ProductPanel(Product product) {
-        
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ItemFrameNormal.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -54,9 +54,17 @@ public class ProductPanel extends AnchorPane {
         this.product = product;
         nameLabel.setText(product.getName());
         prizeLabel.setText(String.format("%.2f", product.getPrice()) + " " + product.getUnit());
-        imageView.setImage(model.getImage(product, kImageWidth, kImageWidth*kImageRatio));
+        imageView.setImage(model.getImage(product, kImageWidth, kImageWidth * kImageRatio));
         if (!product.isEcological()) {
             ecoLabel.setText("");
+        }
+
+        for (ShoppingItem item : model.getShoppingCart().getItems()) {
+            if (item.getProduct() == product) {
+                int index = findIndex();
+                ItemFrameAddandDeleteItem.toFront();
+                ItemFrameAmount.setText(String.valueOf(Math.round(model.getShoppingCart().getItems().get(index).getAmount())));
+            }
         }
     }
     
@@ -99,6 +107,7 @@ public class ProductPanel extends AnchorPane {
         if (model.getShoppingCart().getItems().get(index).getAmount() <= 0){
             model.getShoppingCart().getItems().remove(index);
             ItemFrameAddandDeleteItem.toBack();
+
 
         }
         else{

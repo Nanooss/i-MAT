@@ -14,9 +14,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import se.chalmers.cse.dat216.project.*;
 
 
@@ -60,13 +59,21 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private AnchorPane accountPane;
     @FXML 
     ComboBox cardTypeCombo;
+    @FXML
+    ComboBox cardTypeCombo1;
 
     @FXML 
     private ComboBox monthCombo;
     @FXML
+    private ComboBox monthCombo1;
+    @FXML
     private ComboBox yearCombo;
     @FXML
+    private ComboBox yearCombo1;
+    @FXML
     private TextField cvcField;
+    @FXML
+    private TextField cvcField1;
     @FXML
     private Label purchasesLabel;
     @FXML private Label greetingMulti;
@@ -80,7 +87,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML private TextField dinaUppgifterLeveransadress;
     @FXML private TextField dinaUppgifter;
     @FXML private TextField numberTextField;
+    @FXML private TextField numberTextField1;
     @FXML private TextField nameTextField;
+    @FXML private TextField nameTextField1;
     
     // Other variables
     private final Model model = Model.getInstance();
@@ -94,6 +103,13 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML private AnchorPane wizardAdress;
     @FXML private AnchorPane wizardConfirm;
 
+    @FXML private FlowPane wizzardCartFlowPane;
+
+    @FXML private Label cartTotalValue;
+    @FXML private Button buttonCart;
+    @FXML private Label cartToPay;
+    @FXML private Label payToAdress;
+    @FXML private Label adressToConfirm;
 
 
     // Shop pane actions
@@ -133,9 +149,11 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        model.getShoppingCart().clear();
         model.getShoppingCart().addShoppingCartListener(this);
 
         updateProductList(model.getProducts());
+        updateShoppingCart(model.getShoppingCart().getItems());
         updateBottomPanel();
         
         setupAccountPane();
@@ -144,7 +162,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         loadUser();
 
-        model.getShoppingCart().clear();
+
 
 
 
@@ -179,9 +197,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     private void updateAccountPanel() {
         
         CreditCard card = model.getCreditCard();
-        
-        numberTextField.setText(card.getCardNumber());
-        nameTextField.setText(card.getHoldersName());
+
+        if (!(numberTextField.getText().length() == 0)) numberTextField.setText(card.getCardNumber());
+        if (!(nameTextField.getText().length() == 0))nameTextField.setText(card.getHoldersName());
         
         cardTypeCombo.getSelectionModel().select(card.getCardType());
         monthCombo.getSelectionModel().select(""+card.getValidMonth());
@@ -192,13 +210,29 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         purchasesLabel.setText(model.getNumberOfOrders()+ " tidigare inköp hos iMat");
         
     }
+    private void updateAccountPanel1() {
+
+        CreditCard card = model.getCreditCard();
+
+        if (!(numberTextField1.getText().length() == 0)) numberTextField1.setText(card.getCardNumber());
+        if (!(nameTextField1.getText().length() == 0))nameTextField1.setText(card.getHoldersName());
+
+        cardTypeCombo1.getSelectionModel().select(card.getCardType());
+        monthCombo1.getSelectionModel().select(""+card.getValidMonth());
+        yearCombo1.getSelectionModel().select(""+card.getValidYear());
+
+        cvcField1.setText(""+card.getVerificationCode());
+
+    }
     
     private void updateCreditCard() {
         
         CreditCard card = model.getCreditCard();
-        
-        card.setCardNumber(numberTextField.getText());
-        card.setHoldersName(nameTextField.getText());
+
+        if (numberTextField.getText().length() == 0) card.setCardNumber("");
+            else card.setCardNumber(numberTextField.getText());
+        if (nameTextField.getText().length() == 0) card.setHoldersName("");
+            else card.setHoldersName(nameTextField.getText());
         
         String selectedValue = (String) cardTypeCombo.getSelectionModel().getSelectedItem();
         card.setCardType(selectedValue);
@@ -208,8 +242,31 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         
         selectedValue = (String) yearCombo.getSelectionModel().getSelectedItem();
         card.setValidYear(Integer.parseInt(selectedValue));
-        
-        card.setVerificationCode(Integer.parseInt(cvcField.getText()));
+
+        if (cvcField.getText().length() == 0) card.setVerificationCode(000);
+        else card.setVerificationCode(Integer.parseInt(cvcField.getText()));
+
+    }
+    private void updateCreditCard1() {
+
+        CreditCard card = model.getCreditCard();
+
+        if (numberTextField1.getText().length() == 0) card.setCardNumber("");
+        else card.setCardNumber(numberTextField1.getText());
+        if (nameTextField1.getText().length() == 0) card.setHoldersName("");
+        else card.setHoldersName(nameTextField1.getText());
+
+        String selectedValue = (String) cardTypeCombo1.getSelectionModel().getSelectedItem();
+        card.setCardType(selectedValue);
+
+        selectedValue = (String) monthCombo1.getSelectionModel().getSelectedItem();
+        card.setValidMonth(Integer.parseInt(selectedValue));
+
+        selectedValue = (String) yearCombo1.getSelectionModel().getSelectedItem();
+        card.setValidYear(Integer.parseInt(selectedValue));
+
+        if (cvcField1.getText().length() == 0) card.setVerificationCode(000);
+        else card.setVerificationCode(Integer.parseInt(cvcField1.getText()));
 
     }
     
@@ -220,6 +277,12 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         monthCombo.getItems().addAll(model.getMonths());
         
         yearCombo.getItems().addAll(model.getYears());
+
+        cardTypeCombo1.getItems().addAll(model.getCardTypes());
+
+        monthCombo1.getItems().addAll(model.getMonths());
+
+        yearCombo1.getItems().addAll(model.getYears());
         
     }
 
@@ -254,6 +317,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         model.getCustomer().setEmail(dinaUppgifterMail.getText());
         model.getCustomer().setAddress(dinaUppgifterLeveransadress.getText());
         System.out.println("#User saved");
+        updateCreditCard();
     }
 
     public void loadUser(){
@@ -267,18 +331,22 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     //WizzardPane
     //Navigation
     public void openWizard(){
+        updateShoppingCart(model.getShoppingCart().getItems());
         wizzardPane.toFront();
     }
     public void backToHome(){
+        updateProductList(model.getProducts());
         mainPageSplitPane.toFront();
     }
     public void nextButtonCart(){
-        saveCart();
-        wizzardBetalkort.toFront();
+        loadPayment();
+        if (checkCart()) wizzardBetalkort.toFront();
+
     }
     public void nextButtonPayment(){
-        savePayment();
+        updateCreditCard1();
         wizardAdress.toFront();
+
     }
     public void nextButtonAdress(){
         saveAdress();
@@ -289,11 +357,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         model.placeOrder();
     }
     public void backButtonCart(){
-        saveCart();
+        updateProductList(model.getProducts());
         mainPageSplitPane.toFront();
     }
     public void backButtonPayment(){
-        savePayment();
         wizzardVarukorg.toFront();
     }
     public void backButtonAdress(){
@@ -305,12 +372,33 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
     //Functionality
-    public void saveCart(){}
-    public void savePayment(){}
+    public boolean checkCart(){
+        if (model.getShoppingCart().getItems().size() > 0) return true;
+        else return false;
+    }
+    public void loadPayment(){
+        updateAccountPanel1();
+    }
     public void saveAdress(){}
     public void loadConfirm(){}
 
     //Backend
+    public void updateShoppingCart(List<ShoppingItem> products) {
+        if (model.getShoppingCart().getItems().size() == 0){cartToPay.setText("X");}
+        else {cartToPay.setText("");}
+        cartTotalValue.setText(Math.round(model.getShoppingCart().getTotal()) + " kr");
+        wizzardCartFlowPane.getChildren().clear();
+        int index = 0;
+        for (ShoppingItem product : products) {
 
+            wizzardCartFlowPane.getChildren().add(new cartItem(product.getProduct(), index, this));
+            index += 1;
+        }
+
+    }
+
+    public void updateWizardCreditCard(){
+
+    }
 
 }
