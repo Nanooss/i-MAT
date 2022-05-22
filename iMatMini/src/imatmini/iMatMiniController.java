@@ -60,20 +60,20 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML 
     ComboBox cardTypeCombo;
     @FXML
-    ComboBox cardTypeCombo1;
+    ComboBox wizardCardTypeCombo;
 
     @FXML 
     private ComboBox monthCombo;
     @FXML
-    private ComboBox monthCombo1;
+    private ComboBox wizardMonthCombo;
     @FXML
     private ComboBox yearCombo;
     @FXML
-    private ComboBox yearCombo1;
+    private ComboBox wizardYearCombo;
     @FXML
     private TextField cvcField;
     @FXML
-    private TextField cvcField1;
+    private TextField wizardCvcField;
     @FXML
     private Label purchasesLabel;
     @FXML private Label greetingMulti;
@@ -87,9 +87,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML private TextField dinaUppgifterLeveransadress;
     @FXML private TextField dinaUppgifter;
     @FXML private TextField numberTextField;
-    @FXML private TextField numberTextField1;
+    @FXML private TextField wizardNumberTextField;
     @FXML private TextField nameTextField;
-    @FXML private TextField nameTextField1;
+    @FXML private TextField wizardNameTextField;
     
     // Other variables
     private final Model model = Model.getInstance();
@@ -102,6 +102,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML private AnchorPane wizzardBetalkort;
     @FXML private AnchorPane wizardAdress;
     @FXML private AnchorPane wizardConfirm;
+    @FXML private AnchorPane wizardFinal;
 
     @FXML private FlowPane wizzardCartFlowPane;
 
@@ -110,6 +111,23 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML private Label cartToPay;
     @FXML private Label payToAdress;
     @FXML private Label adressToConfirm;
+    @FXML private TextField wizardNameField;
+    @FXML private TextField wizardLastnameField;
+    @FXML private TextField wizardEmailField;
+    @FXML private TextField wizardAdressField;
+
+    @FXML private Label confirmName;
+    @FXML private Label confirmCard;
+    @FXML private Label confirmCardDate;
+    @FXML private Label confirmMail;
+    @FXML private Label confirmAdress;
+    @FXML private Label confirmPrice;
+
+
+    //Orders
+    @FXML private AnchorPane multiGamlaBPane;
+    @FXML private AnchorPane multimultiGamla;
+    @FXML private FlowPane oldOrdersFlowPane;
 
 
     // Shop pane actions
@@ -155,13 +173,12 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         updateProductList(model.getProducts());
         updateShoppingCart(model.getShoppingCart().getItems());
         updateBottomPanel();
-        
-        setupAccountPane();
 
         mainPageSplitPane.toFront();
-
         loadUser();
-
+        setupAccountPane();
+        setupPayment();
+        loadOrders();
 
 
 
@@ -193,13 +210,13 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         costLabel.setText("Kostnad: " + String.format("%.2f",shoppingCart.getTotal()));
         
     }
-    
+
     private void updateAccountPanel() {
         
         CreditCard card = model.getCreditCard();
 
-        if (!(numberTextField.getText().length() == 0)) numberTextField.setText(card.getCardNumber());
-        if (!(nameTextField.getText().length() == 0))nameTextField.setText(card.getHoldersName());
+        numberTextField.setText(model.getCreditCard().getCardNumber());
+        nameTextField.setText(model.getCreditCard().getHoldersName());
         
         cardTypeCombo.getSelectionModel().select(card.getCardType());
         monthCombo.getSelectionModel().select(""+card.getValidMonth());
@@ -209,20 +226,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         
         purchasesLabel.setText(model.getNumberOfOrders()+ " tidigare inköp hos iMat");
         
-    }
-    private void updateAccountPanel1() {
-
-        CreditCard card = model.getCreditCard();
-
-        if (!(numberTextField1.getText().length() == 0)) numberTextField1.setText(card.getCardNumber());
-        if (!(nameTextField1.getText().length() == 0))nameTextField1.setText(card.getHoldersName());
-
-        cardTypeCombo1.getSelectionModel().select(card.getCardType());
-        monthCombo1.getSelectionModel().select(""+card.getValidMonth());
-        yearCombo1.getSelectionModel().select(""+card.getValidYear());
-
-        cvcField1.setText(""+card.getVerificationCode());
-
     }
     
     private void updateCreditCard() {
@@ -247,28 +250,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         else card.setVerificationCode(Integer.parseInt(cvcField.getText()));
 
     }
-    private void updateCreditCard1() {
-
-        CreditCard card = model.getCreditCard();
-
-        if (numberTextField1.getText().length() == 0) card.setCardNumber("");
-        else card.setCardNumber(numberTextField1.getText());
-        if (nameTextField1.getText().length() == 0) card.setHoldersName("");
-        else card.setHoldersName(nameTextField1.getText());
-
-        String selectedValue = (String) cardTypeCombo1.getSelectionModel().getSelectedItem();
-        card.setCardType(selectedValue);
-
-        selectedValue = (String) monthCombo1.getSelectionModel().getSelectedItem();
-        card.setValidMonth(Integer.parseInt(selectedValue));
-
-        selectedValue = (String) yearCombo1.getSelectionModel().getSelectedItem();
-        card.setValidYear(Integer.parseInt(selectedValue));
-
-        if (cvcField1.getText().length() == 0) card.setVerificationCode(000);
-        else card.setVerificationCode(Integer.parseInt(cvcField1.getText()));
-
-    }
     
     private void setupAccountPane() {
                 
@@ -277,19 +258,19 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         monthCombo.getItems().addAll(model.getMonths());
         
         yearCombo.getItems().addAll(model.getYears());
+    }
+    public void setupPayment(){
+        wizardCardTypeCombo.getItems().addAll(model.getCardTypes());
 
-        cardTypeCombo1.getItems().addAll(model.getCardTypes());
+        wizardMonthCombo.getItems().addAll(model.getMonths());
 
-        monthCombo1.getItems().addAll(model.getMonths());
-
-        yearCombo1.getItems().addAll(model.getYears());
-        
+        wizardYearCombo.getItems().addAll(model.getYears());
     }
 
     //MultiWindow
     // Navigation
     public void openUserOptionsView(){
-        // behover en uppdate för namnet på profilen har
+        multiGamlaBPane.setOpacity(0);
         greetingMulti.setText("Hej " + model.getCustomer().getFirstName() + "!");
         multiWindow.toFront();
         userMenyAnchorPane.toFront();
@@ -310,6 +291,17 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         userMenyAnchorPane.toFront();
     }
 
+    public void openOrderView(){
+        multiGamlaBPane.setOpacity(100);
+        multiGamlaBPane.toFront();
+        multimultiGamla.toFront();
+    }
+
+    public void closeOrderView(){
+        multiGamlaBPane.setOpacity(0);
+        userMenyAnchorPane.toFront();
+    }
+
     //AccountPane
     public void saveUser(){
         model.getCustomer().setFirstName(dinaUppgifterNamn.getText());
@@ -321,17 +313,18 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
     public void loadUser(){
+        updateAccountPanel();
         dinaUppgifterNamn.setText(model.getCustomer().getFirstName());
         dinaUppgifterEfternamn.setText(model.getCustomer().getLastName());
         dinaUppgifterMail.setText(model.getCustomer().getEmail());
         dinaUppgifterLeveransadress.setText(model.getCustomer().getAddress());
     }
 
-
     //WizzardPane
     //Navigation
     public void openWizard(){
         updateShoppingCart(model.getShoppingCart().getItems());
+        wizzardVarukorg.toFront();
         wizzardPane.toFront();
     }
     public void backToHome(){
@@ -344,17 +337,21 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     }
     public void nextButtonPayment(){
-        updateCreditCard1();
+        updateWizardCreditCard();
         wizardAdress.toFront();
+        loadAdress();
 
     }
     public void nextButtonAdress(){
-        saveAdress();
         wizardConfirm.toFront();
+        saveAdress();
+        loadConfirm();
     }
     public void confirmButton(){
         loadConfirm();
         model.placeOrder();
+        wizardFinal.toFront();
+        loadOrders();
     }
     public void backButtonCart(){
         updateProductList(model.getProducts());
@@ -364,7 +361,6 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         wizzardVarukorg.toFront();
     }
     public void backButtonAdress(){
-        saveAdress();
         wizzardBetalkort.toFront();
     }
     public void backButtonConfirm(){
@@ -377,10 +373,41 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         else return false;
     }
     public void loadPayment(){
-        updateAccountPanel1();
+
+        CreditCard card = model.getCreditCard();
+
+        wizardNumberTextField.setText(card.getCardNumber());
+        wizardNameTextField.setText(card.getHoldersName());
+
+        wizardCardTypeCombo.getSelectionModel().select(card.getCardType());
+        wizardMonthCombo.getSelectionModel().select(""+card.getValidMonth());
+        wizardYearCombo.getSelectionModel().select(""+card.getValidYear());
+
+        wizardCvcField.setText(""+card.getVerificationCode());
     }
-    public void saveAdress(){}
-    public void loadConfirm(){}
+    public void loadAdress(){
+        wizardNameField.setText(model.getCustomer().getFirstName());
+        wizardLastnameField.setText(model.getCustomer().getLastName());
+        wizardEmailField.setText(model.getCustomer().getEmail());
+        wizardAdressField.setText(model.getCustomer().getAddress());
+    }
+    public void saveAdress(){
+        model.getCustomer().setFirstName(wizardNameField.getText());
+        model.getCustomer().setLastName(wizardLastnameField.getText());
+        model.getCustomer().setEmail(wizardEmailField.getText());
+        model.getCustomer().setAddress(wizardAdressField.getText());
+        System.out.println("#User saved");
+
+    }
+    public void loadConfirm(){
+        confirmName.setText(model.getCustomer().getFirstName() + model.getCustomer().getLastName());
+        confirmCard.setText(model.getCreditCard().getCardNumber());
+        confirmCardDate.setText(model.getCreditCard().getValidMonth()+"/"+model.getCreditCard().getValidYear());
+        confirmMail.setText(model.getCustomer().getEmail());
+        confirmAdress.setText(model.getCustomer().getAddress());
+        confirmPrice.setText(String.valueOf(Math.round(model.getShoppingCart().getTotal()))+ " Kr");
+
+    }
 
     //Backend
     public void updateShoppingCart(List<ShoppingItem> products) {
@@ -398,7 +425,35 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     }
 
     public void updateWizardCreditCard(){
+        CreditCard card = model.getCreditCard();
 
+        if (wizardNumberTextField.getText().length() == 0) card.setCardNumber("");
+        else card.setCardNumber(wizardNumberTextField.getText());
+        if (wizardNameTextField.getText().length() == 0) card.setHoldersName("");
+        else card.setHoldersName(wizardNameTextField.getText());
+
+        String selectedValue = (String) wizardCardTypeCombo.getSelectionModel().getSelectedItem();
+        card.setCardType(selectedValue);
+
+        selectedValue = (String) wizardMonthCombo.getSelectionModel().getSelectedItem();
+        card.setValidMonth(Integer.parseInt(selectedValue));
+
+        selectedValue = (String) wizardYearCombo.getSelectionModel().getSelectedItem();
+        card.setValidYear(Integer.parseInt(selectedValue));
+
+        if (wizardCvcField.getText().length() == 0) card.setVerificationCode(000);
+        else card.setVerificationCode(Integer.parseInt(wizardCvcField.getText()));
     }
 
+
+    //Orders
+    public void loadOrders(){
+        oldOrdersFlowPane.getChildren().clear();
+        System.out.println(model.getOrders());
+        int i = 0;
+        for ( Order order : model.getOrders()) {
+            oldOrdersFlowPane.getChildren().add(new historyItem(order, i ,this));
+            i+=1;
+        }
+    }
 }

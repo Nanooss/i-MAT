@@ -13,12 +13,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javafx.scene.image.Image;
-import se.chalmers.cse.dat216.project.CreditCard;
-import se.chalmers.cse.dat216.project.Customer;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 
 /**
@@ -128,6 +123,10 @@ public class Model {
 
         return iMatDataHandler.getOrders().size();
 
+    }
+
+    public List<Order> getOrders(){
+        return iMatDataHandler.getOrders();
     }
 
     public void shutDown() {

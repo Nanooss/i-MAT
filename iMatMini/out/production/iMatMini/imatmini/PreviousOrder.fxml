@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="100.0" prefWidth="640.0" styleClass="black-border2" stylesheets="@IMat.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imatmini.PreviousOrder">
+<fx:root prefHeight="100.0" prefWidth="640.0" styleClass="black-border2" stylesheets="@IMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="34.0" layoutY="24.0" prefHeight="25.0" prefWidth="67.0" text="order-nr:">
          <font>
@@ -20,7 +19,7 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="orderDate" layoutX="34.0" layoutY="49.0" prefHeight="25.0" prefWidth="125.0" text="2022-05-10">
+      <Label fx:id="orderDate" layoutX="34.0" layoutY="49.0" prefHeight="25.0" prefWidth="219.0" text="2022-05-10">
          <font>
             <Font size="16.0" />
          </font>
@@ -40,14 +39,14 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="orderTotalPrice" layoutX="359.0" layoutY="49.0" prefHeight="25.0" prefWidth="67.0" text="10000 kr">
+      <Label fx:id="orderTotalPrice" layoutX="359.0" layoutY="49.0" prefHeight="25.0" prefWidth="117.0" text="10000 kr">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Button layoutX="600.0" layoutY="12.0" maxHeight="20.0" maxWidth="20.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="20.0" style="-fx-background-color: #FFFFFF;">
+      <Button layoutX="577.0" layoutY="12.0" maxHeight="42.0" maxWidth="43.0" minHeight="20.0" minWidth="20.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="43.0" style="-fx-background-color: #FFFFFF;">
          <graphic>
-            <ImageView fx:id="orderInfo" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="orderInfo" fitHeight="45.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../GreenPictures/Icons/info.png" />
                </image>
@@ -55,4 +54,4 @@
          </graphic>
       </Button>
    </children>
-</AnchorPane>
+</fx:root>
