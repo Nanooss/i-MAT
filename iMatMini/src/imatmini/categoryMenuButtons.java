@@ -55,38 +55,39 @@ public class categoryMenuButtons extends AnchorPane {
         public void applyCategory(){
             switch (categorySearchName){
                 case("Mejeri"):
-                    categories.add(ProductCategory.DAIRIES);
+                    categories.add(ProductCategory.DAIRIES);//
                     break;
                 case("Chark"):
-                    categories.add(ProductCategory.FISH);
-                    categories.add(ProductCategory.MEAT);
+                    categories.add(ProductCategory.FISH);//
+                    categories.add(ProductCategory.MEAT);//
                     break;
                 case("Sötsaker"):
                     categories.add(ProductCategory.SWEET);
                     break;
                 case("Dricka"):
-                    categories.add(ProductCategory.HOT_DRINKS);
-                    categories.add(ProductCategory.COLD_DRINKS);
+                    categories.add(ProductCategory.HOT_DRINKS);//
+                    categories.add(ProductCategory.COLD_DRINKS);//
                     break;
                 case("Frukt & Grönt"):
-                    categories.add(ProductCategory.CABBAGE);
-                    categories.add(ProductCategory.BERRY);
-                    categories.add(ProductCategory.CITRUS_FRUIT);
-                    categories.add(ProductCategory.EXOTIC_FRUIT);
+                    categories.add(ProductCategory.CABBAGE);//
+                    categories.add(ProductCategory.BERRY);//
+                    categories.add(ProductCategory.CITRUS_FRUIT);//
+                    categories.add(ProductCategory.EXOTIC_FRUIT);//
                     categories.add(ProductCategory.FRUIT);
-                    categories.add(ProductCategory.MELONS);
+                    categories.add(ProductCategory.MELONS);//
                     categories.add(ProductCategory.HERB);
-                    categories.add(ProductCategory.VEGETABLE_FRUIT);
+                    categories.add(ProductCategory.VEGETABLE_FRUIT);//
+                    categories.add(ProductCategory.ROOT_VEGETABLE);
                     break;
                 case("Kolonial"):
-                    categories.add(ProductCategory.POD);
-                    categories.add(ProductCategory.POTATO_RICE);
-                    categories.add(ProductCategory.FLOUR_SUGAR_SALT);
-                    categories.add(ProductCategory.NUTS_AND_SEEDS);
-                    categories.add(ProductCategory.PASTA);
+                    categories.add(ProductCategory.POD);//
+                    categories.add(ProductCategory.POTATO_RICE);//
+                    categories.add(ProductCategory.FLOUR_SUGAR_SALT);//
+                    categories.add(ProductCategory.NUTS_AND_SEEDS);//
+                    categories.add(ProductCategory.PASTA);//
                     break;
                 case("Bröd"):
-                    categories.add(ProductCategory.BREAD);
+                    categories.add(ProductCategory.BREAD);//
                     break;
             }
         }
