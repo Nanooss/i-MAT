@@ -35,12 +35,14 @@ public class ProductPanel extends AnchorPane {
     private Model model = Model.getInstance();
 
     private Product product;
+
+    private iMatMiniController iMatController;
     
     private final static double kImageWidth = 100.0;
     private final static double kImageRatio = 0.75;
 
-    public ProductPanel(Product product) {
-
+    public ProductPanel(Product product,iMatMiniController parentController) {
+        iMatController = parentController;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ItemFrameNormal.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -75,6 +77,7 @@ public class ProductPanel extends AnchorPane {
         ItemFrameAddandDeleteItem.toFront();
         int index = findIndex();
         ItemFrameAmount.setText(String.valueOf(Math.round(model.getShoppingCart().getItems().get(index).getAmount())));
+        iMatController.updateCartAmount();
     }
 
     @FXML
@@ -85,6 +88,7 @@ public class ProductPanel extends AnchorPane {
         try{
             model.getShoppingCart().getItems().get(index).setAmount(Double.parseDouble(ItemFrameAmount.getText()));
             System.out.println(model.getShoppingCart().getItems().get(index).getTotal());
+            iMatController.updateCartAmount();
         }
 
         catch(Exception e){
@@ -99,6 +103,7 @@ public class ProductPanel extends AnchorPane {
         model.getShoppingCart().getItems().get(index).setAmount(model.getShoppingCart().getItems().get(index).getAmount() + 1);
         ItemFrameAmount.setText(String.valueOf(Math.round(model.getShoppingCart().getItems().get(index).getAmount())));
         System.out.println(model.getShoppingCart().getItems().get(index).getTotal());
+        iMatController.updateCartAmount();
 
     }
     public void multiSub(){
@@ -107,12 +112,14 @@ public class ProductPanel extends AnchorPane {
         if (model.getShoppingCart().getItems().get(index).getAmount() <= 0){
             model.getShoppingCart().getItems().remove(index);
             ItemFrameAddandDeleteItem.toBack();
+            iMatController.updateCartAmount();
 
 
         }
         else{
             ItemFrameAmount.setText(String.valueOf(Math.round(model.getShoppingCart().getItems().get(index).getAmount())));
             System.out.println(model.getShoppingCart().getItems().get(index).getTotal());
+            iMatController.updateCartAmount();
         }
 
 

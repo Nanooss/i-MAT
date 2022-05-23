@@ -140,6 +140,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     //Category
     @FXML FlowPane categoryMenu;
 
+    //CartUpdate
+    @FXML Label cartAmount;
+    @FXML Label redCircle;
+
 
     // Shop pane actions
     @FXML
@@ -191,7 +195,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         setupPayment();
         loadOrders();
         loadCategorys();
-
+        updateCartAmount();
 
 
 
@@ -209,7 +213,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
         for (Product product : products) {
 
-            productField.getChildren().add(new ProductPanel(product));
+            productField.getChildren().add(new ProductPanel(product, this));
         }
 
     }
@@ -493,8 +497,21 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         }
     }
 
-    //ClearAll
-    public void clearAll(){
+    //cartAmount
+    public void updateCartAmount(){
+        if(model.getShoppingCart().getItems().size() > 0){
+            redCircle.setOpacity(100);
+            cartAmount.setOpacity(100);
+            int amountInCart=0;
+            for (ShoppingItem item : model.getShoppingCart().getItems()){
+                amountInCart += Math.round(item.getAmount());
+            }
+            if(amountInCart > 99) cartAmount.setText(99 + "+");
+            else cartAmount.setText(String.valueOf(amountInCart));
+        }else{
+            redCircle.setOpacity(0);
+            cartAmount.setOpacity(0);
+        }
     }
 
 
