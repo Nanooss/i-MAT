@@ -298,6 +298,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void closeUserOptionsView(){
         mainPageSplitPane.toFront();
         updateProductList(model.getProducts());
+        updateCartAmount();
     }
 
     public void openAccountView() {
