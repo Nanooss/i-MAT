@@ -11,6 +11,7 @@ import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -31,6 +32,8 @@ public class ProductPanel extends AnchorPane {
     @FXML Label itemFrameLaggTill;
     @FXML AnchorPane ItemFrameAddandDeleteItem;
     @FXML TextField ItemFrameAmount;
+    @FXML
+    Button toggleFavorites;
     
     private Model model = Model.getInstance();
 
@@ -68,6 +71,8 @@ public class ProductPanel extends AnchorPane {
                 ItemFrameAmount.setText(String.valueOf(Math.round(model.getShoppingCart().getItems().get(index).getAmount())));
             }
         }
+        if(model.getFavorites().contains(product)) toggleFavorites.setText("Remove");
+        else toggleFavorites.setText("Add");
     }
     
 
@@ -124,6 +129,24 @@ public class ProductPanel extends AnchorPane {
 
 
 
+    }
+
+    public void addToFavorites(){
+        model.addFavorites(product);
+    }
+    public void removeFavorite(){
+        model.removeFavorites(product);
+    }
+
+    public void toggleFavorite(){
+        if(model.getFavorites().contains(product)) {
+            removeFavorite();
+            toggleFavorites.setText("Add");
+        }
+        else{
+            addToFavorites();
+            toggleFavorites.setText("Remove");
+        }
     }
 
     private int findIndex(){

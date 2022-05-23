@@ -144,6 +144,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML Label cartAmount;
     @FXML Label redCircle;
 
+    //Favorites
+    @FXML AnchorPane favoriteMenuAnchorPane;
+    @FXML FlowPane favoritesFlowPane;
 
     // Shop pane actions
     @FXML
@@ -294,6 +297,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     public void closeUserOptionsView(){
         mainPageSplitPane.toFront();
+        updateProductList(model.getProducts());
     }
 
     public void openAccountView() {
@@ -435,7 +439,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         int index = 0;
         for (ShoppingItem product : products) {
 
-            wizzardCartFlowPane.getChildren().add(new cartItem(product.getProduct(), index, this));
+            wizzardCartFlowPane.getChildren().add(new cartItem(product.getProduct(), this));
             index += 1;
         }
 
@@ -512,6 +516,23 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
             redCircle.setOpacity(0);
             cartAmount.setOpacity(0);
         }
+    }
+
+    //favorites
+
+    public void openFavorites(){
+        loadFavorites();
+        favoriteMenuAnchorPane.toFront();
+    }
+
+    public void loadFavorites(){
+        model.getFavorites();
+        favoritesFlowPane.getChildren().clear();
+        for (Product product : model.getFavorites()) {
+
+            favoritesFlowPane.getChildren().add(new cartItem(product, this));
+        }
+
     }
 
 
