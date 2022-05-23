@@ -6,9 +6,12 @@
 package imatmini;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.concurrent.Flow;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -418,6 +421,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     }
 
+
     //Backend
     public void updateShoppingCart(List<ShoppingItem> products) {
         if (model.getShoppingCart().getItems().size() == 0){cartToPay.setText("X");}
@@ -487,6 +491,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         for ( String category : categorys) {
             categoryMenu.getChildren().add(new categoryMenuButtons(category,this));
         }
+    }
+
+    //ClearAll
+    public void clearAll(){
     }
 
 
