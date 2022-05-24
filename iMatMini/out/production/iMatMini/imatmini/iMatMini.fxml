@@ -671,7 +671,17 @@
                                                         <items>
                                                           <AnchorPane minHeight="300.0" minWidth="300.0" prefHeight="200.0" prefWidth="200.0">
                                                                <children>
-                                                                  <AnchorPane layoutX="346.0" layoutY="50.0" prefHeight="200.0" prefWidth="337.0">
+                                                                  <AnchorPane layoutX="684.0" layoutY="50.0" prefHeight="175.0" prefWidth="320.0" style="-fx-background-color: #999999;">
+                                                                     <children>
+                                                                        <ImageView fx:id="frequentRight" fitHeight="147.0" fitWidth="242.0" layoutX="36.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                                  <AnchorPane layoutX="45.0" layoutY="50.0" prefHeight="200.0" prefWidth="275.0" style="-fx-background-color: #999999;">
+                                                                     <children>
+                                                                        <ImageView fx:id="frequentLeft" fitHeight="161.0" fitWidth="287.0" layoutX="-6.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+                                                                     </children>
+                                                                  </AnchorPane>
+                                                                  <AnchorPane layoutX="328.0" layoutY="50.0" prefHeight="200.0" prefWidth="275.0" style="-fx-background-color: #999999;">
                                                                      <children>
                                                                         <ImageView fx:id="frequentMiddle" fitHeight="200.0" fitWidth="339.0" pickOnBounds="true" preserveRatio="true" />
                                                                      </children>

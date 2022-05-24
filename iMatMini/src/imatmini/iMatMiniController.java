@@ -148,6 +148,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     //frequent
     @FXML
     ImageView frequentMiddle;
+    ImageView frequentRight;
+    ImageView frequentLeft;
 
     // Shop pane actions
     @FXML
@@ -236,8 +238,21 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
                 System.out.println("#" + items.getProduct().getName());
             }
         }
-        Product x = mostCommon(products);
-        frequentMiddle.setImage(model.getImage(x));
+        if (products.size()>0) {
+            Product x = mostCommon(products);
+            products.remove(x);
+            frequentMiddle.setImage(model.getImage(x));
+        }
+        if (products.size()>1) {
+            Product y = mostCommon(products);
+            products.remove(y);
+            frequentRight.setImage(model.getImage(y));
+        }
+        if (products.size()>2) {
+            Product z = mostCommon(products);
+            products.remove(z);
+            frequentLeft.setImage(model.getImage(z));
+        }
     }
 
     public static <T> T mostCommon(List<T> list) {
