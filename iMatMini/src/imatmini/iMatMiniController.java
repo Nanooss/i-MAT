@@ -6,19 +6,16 @@
 package imatmini;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.concurrent.Flow;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import se.chalmers.cse.dat216.project.*;
 
 
@@ -60,19 +57,19 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     // Account Pane
     @FXML
     private AnchorPane accountPane;
-    @FXML 
-    ComboBox cardTypeCombo;
     @FXML
-    ComboBox wizardCardTypeCombo;
+    ComboBox<String> cardTypeCombo;
+    @FXML
+    ComboBox<String> wizardCardTypeCombo;
 
     @FXML 
-    private ComboBox monthCombo;
+    private ComboBox<String> monthCombo;
     @FXML
-    private ComboBox wizardMonthCombo;
+    private ComboBox<String> wizardMonthCombo;
     @FXML
-    private ComboBox yearCombo;
+    private ComboBox<String> yearCombo;
     @FXML
-    private ComboBox wizardYearCombo;
+    private ComboBox<String> wizardYearCombo;
     @FXML
     private TextField cvcField;
     @FXML
@@ -148,6 +145,10 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML AnchorPane favoriteMenuAnchorPane;
     @FXML FlowPane favoritesFlowPane;
 
+    //frequent
+    @FXML
+    ImageView frequentMiddle;
+
     // Shop pane actions
     @FXML
     private void handleShowAccountAction(ActionEvent event) {
@@ -165,6 +166,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @FXML
     private void handleClearCartAction(ActionEvent event) {
         model.clearShoppingCart();
+        updateShoppingCart(model.getShoppingCart().getItems());
     }
     
     @FXML
@@ -185,14 +187,19 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        model.getShoppingCart().clear();
         model.getShoppingCart().addShoppingCartListener(this);
+        mainPageSplitPane.toFront();
+        updateFrequent();
+        int index = 0;
+        for (Product product : model.getProducts()) {
 
-        updateProductList(model.getProducts());
+            productField.getChildren().add(new ProductPanel(product,index, this));
+            index++;
+        }
         updateShoppingCart(model.getShoppingCart().getItems());
         updateBottomPanel();
 
-        mainPageSplitPane.toFront();
+
         loadUser();
         setupAccountPane();
         setupPayment();
@@ -213,12 +220,42 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     void updateProductList(List<Product> products) {
 
         productField.getChildren().clear();
-
         for (Product product : products) {
-
-            productField.getChildren().add(new ProductPanel(product, this));
+            productField.getChildren().add(new ProductPanel(product, 0, this));
         }
 
+    }
+
+    public void updateFrequent(){
+
+        Image image;
+        ArrayList<Product> products = new ArrayList<>();
+        for (Order orders : model.getOrders()){
+            for(ShoppingItem items : orders.getItems()){
+                products.add(items.getProduct());
+                System.out.println("#" + items.getProduct().getName());
+            }
+        }
+        Product x = mostCommon(products);
+        frequentMiddle.setImage(model.getImage(x));
+    }
+
+    public static <T> T mostCommon(List<T> list) {
+        Map<T, Integer> map = new HashMap<>();
+
+        for (T t : list) {
+            Integer val = map.get(t);
+            map.put(t, val == null ? 1 : val + 1);
+        }
+
+        Map.Entry<T, Integer> max = null;
+
+        for (Map.Entry<T, Integer> e : map.entrySet()) {
+            if (max == null || e.getValue() > max.getValue())
+                max = e;
+        }
+
+        return max.getKey();
     }
     
     private void updateBottomPanel() {
@@ -256,13 +293,13 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         if (nameTextField.getText().length() == 0) card.setHoldersName("");
             else card.setHoldersName(nameTextField.getText());
         
-        String selectedValue = (String) cardTypeCombo.getSelectionModel().getSelectedItem();
+        String selectedValue = cardTypeCombo.getSelectionModel().getSelectedItem();
         card.setCardType(selectedValue);
         
-        selectedValue = (String) monthCombo.getSelectionModel().getSelectedItem();
+        selectedValue = monthCombo.getSelectionModel().getSelectedItem();
         card.setValidMonth(Integer.parseInt(selectedValue));
         
-        selectedValue = (String) yearCombo.getSelectionModel().getSelectedItem();
+        selectedValue = yearCombo.getSelectionModel().getSelectedItem();
         card.setValidYear(Integer.parseInt(selectedValue));
 
         if (cvcField.getText().length() == 0) card.setVerificationCode(000);
@@ -351,6 +388,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void backToHome(){
         updateProductList(model.getProducts());
         mainPageSplitPane.toFront();
+        updateCartAmount();
     }
     public void nextButtonCart(){
         loadPayment();
@@ -377,6 +415,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void backButtonCart(){
         updateProductList(model.getProducts());
         mainPageSplitPane.toFront();
+        updateCartAmount();
     }
     public void backButtonPayment(){
         wizzardVarukorg.toFront();
@@ -454,13 +493,13 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         if (wizardNameTextField.getText().length() == 0) card.setHoldersName("");
         else card.setHoldersName(wizardNameTextField.getText());
 
-        String selectedValue = (String) wizardCardTypeCombo.getSelectionModel().getSelectedItem();
+        String selectedValue = wizardCardTypeCombo.getSelectionModel().getSelectedItem();
         card.setCardType(selectedValue);
 
-        selectedValue = (String) wizardMonthCombo.getSelectionModel().getSelectedItem();
+        selectedValue = wizardMonthCombo.getSelectionModel().getSelectedItem();
         card.setValidMonth(Integer.parseInt(selectedValue));
 
-        selectedValue = (String) wizardYearCombo.getSelectionModel().getSelectedItem();
+        selectedValue = wizardYearCombo.getSelectionModel().getSelectedItem();
         card.setValidYear(Integer.parseInt(selectedValue));
 
         if (wizardCvcField.getText().length() == 0) card.setVerificationCode(000);

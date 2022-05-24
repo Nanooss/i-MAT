@@ -37,14 +37,16 @@ public class ProductPanel extends AnchorPane {
     
     private Model model = Model.getInstance();
 
-    private Product product;
+    public Product product;
 
     private iMatMiniController iMatController;
     
     private final static double kImageWidth = 100.0;
     private final static double kImageRatio = 0.75;
+    int productIndex;
 
-    public ProductPanel(Product product,iMatMiniController parentController) {
+    public ProductPanel(Product product,int productIndex,iMatMiniController parentController) {
+        this.productIndex=productIndex;
         iMatController = parentController;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("ItemFrameNormal.fxml"));
         fxmlLoader.setRoot(this);
@@ -59,7 +61,7 @@ public class ProductPanel extends AnchorPane {
         this.product = product;
         nameLabel.setText(product.getName());
         prizeLabel.setText(String.format("%.2f", product.getPrice()) + " " + product.getUnit());
-        imageView.setImage(model.getImage(product, kImageWidth, kImageWidth * kImageRatio));
+        imageView.setImage(model.getImage(product));
         if (!product.isEcological()) {
             ecoLabel.setText("");
         }
@@ -87,20 +89,25 @@ public class ProductPanel extends AnchorPane {
 
     @FXML
     private void handleMultiAdd(ActionEvent event) {
-
         int index = findIndex();
 
         try{
             model.getShoppingCart().getItems().get(index).setAmount(Double.parseDouble(ItemFrameAmount.getText()));
             System.out.println(model.getShoppingCart().getItems().get(index).getTotal());
-            iMatController.updateCartAmount();
+            iMatController.updateShoppingCart(model.getShoppingCart().getItems());
+            if (model.getShoppingCart().getItems().get(index).getAmount() <= 0){
+                System.out.println("#Removed " + model.getShoppingCart().getItems().get(index).getProduct().getName());
+                model.getShoppingCart().getItems().remove(index);
+                ItemFrameAddandDeleteItem.toBack();
+                iMatController.updateShoppingCart(model.getShoppingCart().getItems());
+            }
         }
 
         catch(Exception e){
             System.out.println("#Add Error");
 
         }
-
+        iMatController.updateCartAmount();
     }
 
     public void multiAdd(){

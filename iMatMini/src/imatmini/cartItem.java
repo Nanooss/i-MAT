@@ -82,6 +82,7 @@ public class cartItem extends AnchorPane {
         int index = findIndex();
         ItemFrameAmount.setText(String.valueOf(Math.round(model.getShoppingCart().getItems().get(index).getAmount())));
         itemFramePrice.setText(model.getShoppingCart().getItems().get(findIndex()).getTotal() + " Kr");
+        iMatController.updateCartAmount();
     }
 
     @FXML
@@ -106,6 +107,7 @@ public class cartItem extends AnchorPane {
             System.out.println("#Add Error");
 
         }
+        iMatController.updateCartAmount();
 
     }
 
