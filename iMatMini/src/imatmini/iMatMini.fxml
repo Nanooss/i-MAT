@@ -671,12 +671,12 @@
                                                         <items>
                                                           <AnchorPane minHeight="300.0" minWidth="300.0" prefHeight="200.0" prefWidth="200.0">
                                                                <children>
-                                                                  <AnchorPane layoutX="684.0" layoutY="50.0" prefHeight="175.0" prefWidth="320.0" style="-fx-background-color: #999999;">
+                                                                  <AnchorPane layoutX="667.0" layoutY="70.0" prefHeight="151.0" prefWidth="250.0" style="-fx-background-color: #999999;">
                                                                      <children>
                                                                         <ImageView fx:id="frequentRight" fitHeight="147.0" fitWidth="242.0" layoutX="36.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
                                                                      </children>
                                                                   </AnchorPane>
-                                                                  <AnchorPane layoutX="45.0" layoutY="50.0" prefHeight="200.0" prefWidth="275.0" style="-fx-background-color: #999999;">
+                                                                  <AnchorPane layoutX="45.0" layoutY="61.0" prefHeight="170.0" prefWidth="281.0" style="-fx-background-color: #999999;">
                                                                      <children>
                                                                         <ImageView fx:id="frequentLeft" fitHeight="161.0" fitWidth="287.0" layoutX="-6.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
                                                                      </children>
