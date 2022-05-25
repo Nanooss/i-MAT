@@ -54,6 +54,8 @@ public class categoryMenuButtons extends AnchorPane {
         }
         public void applyCategory(){
             switch (categorySearchName){
+                case("Startsida"):
+                    break;
                 case("Mejeri"):
                     categories.add(ProductCategory.DAIRIES);//
                     break;
@@ -99,8 +101,11 @@ public class categoryMenuButtons extends AnchorPane {
                     matches.add(product);
                 }
             }
-            iMatController.updateProductList(matches);
-        
+            if (categorySearchName == "Startsida") iMatController.updateAllProductNodes();
+            else iMatController.updateProductList(matches);
+            if(categorySearchName == "Startsida") iMatController.categoryLabelPane.toBack();
+            else iMatController.categoryLabelPane.toFront();
+            iMatController.categoryLabel.setText(categorySearchName);
         }
         
 

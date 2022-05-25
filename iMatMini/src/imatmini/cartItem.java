@@ -73,15 +73,15 @@ public class cartItem extends AnchorPane {
             ecoLabel.setText("");
         }*/
     }
-    
+
 
     public void handleAddAction() {
-        System.out.println("Add " + product.getName());
-        model.addToShoppingCart(product);
-        ItemFrameLaggTIll.toBack();
         int index = findIndex();
-        ItemFrameAmount.setText(String.valueOf(Math.round(model.getShoppingCart().getItems().get(index).getAmount())));
-        itemFramePrice.setText(model.getShoppingCart().getItems().get(findIndex()).getTotal() + " Kr");
+        if(this.model.getShoppingCart().getItems().contains(findProduct())){
+            model.getShoppingCart().getItems().get(index).setAmount(model.getShoppingCart().getItems().get(index).getAmount() + 1);
+        }  else{ System.out.println("Add " + product.getName());
+            model.addToShoppingCart(product);}
+        iMatController.updateProduct(product);
         iMatController.updateCartAmount();
     }
 
@@ -107,6 +107,7 @@ public class cartItem extends AnchorPane {
             System.out.println("#Add Error");
 
         }
+        iMatController.updateProductNode(model.getProducts().indexOf(product),product);
         iMatController.updateCartAmount();
 
     }
@@ -118,6 +119,7 @@ public class cartItem extends AnchorPane {
         System.out.println(model.getShoppingCart().getItems().get(index).getTotal());
         iMatController.updateShoppingCart(model.getShoppingCart().getItems());
         itemFramePrice.setText(model.getShoppingCart().getItems().get(findIndex()).getTotal() + " Kr");
+        iMatController.updateProductNode(model.getProducts().indexOf(product),product);
 
     }
     public void multiSub(){
@@ -136,7 +138,7 @@ public class cartItem extends AnchorPane {
             iMatController.updateShoppingCart(model.getShoppingCart().getItems());
             itemFramePrice.setText(model.getShoppingCart().getItems().get(findIndex()).getTotal() + " Kr");
         }
-
+        iMatController.updateProductNode(model.getProducts().indexOf(product),product);
 
 
     }
@@ -157,5 +159,14 @@ public class cartItem extends AnchorPane {
             if(item.getProduct() == product) return true;
         }
         return false;
+    }
+
+    private ShoppingItem findProduct(){
+        for (ShoppingItem item : model.getShoppingCart().getItems()){
+            if(item.getProduct() == product) {
+                return item;
+            }
+        }
+        return null;
     }
 }

@@ -110,6 +110,7 @@ public class ProductPanel extends AnchorPane {
         iMatController.updateCartAmount();
     }
 
+
     public void multiAdd(){
         int index = findIndex();
         model.getShoppingCart().getItems().get(index).setAmount(model.getShoppingCart().getItems().get(index).getAmount() + 1);

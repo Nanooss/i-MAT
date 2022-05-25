@@ -14,7 +14,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import se.chalmers.cse.dat216.project.*;
 
@@ -25,6 +24,8 @@ import se.chalmers.cse.dat216.project.*;
  */
 public class iMatMiniController implements Initializable, ShoppingCartListener {
 
+
+    ArrayList<Node> productNodeList = new ArrayList<>();
     // MainPage
     @FXML
     private SplitPane mainPageSplitPane;
@@ -136,6 +137,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     //Category
     @FXML FlowPane categoryMenu;
+    @FXML Label categoryLabel;
+    @FXML AnchorPane categoryLabelPane;
 
     //CartUpdate
     @FXML Label cartAmount;
@@ -147,9 +150,11 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     //frequent
     @FXML
-    ImageView frequentMiddle;
-    ImageView frequentRight;
-    ImageView frequentLeft;
+    AnchorPane frequentMiddle;
+    @FXML
+    AnchorPane frequentRight;
+    @FXML
+    AnchorPane frequentLeft;
 
     // Shop pane actions
     @FXML
@@ -192,12 +197,12 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         model.getShoppingCart().addShoppingCartListener(this);
         mainPageSplitPane.toFront();
         updateFrequent();
+        productField.getChildren().clear();
         int index = 0;
         for (Product product : model.getProducts()) {
-
-            productField.getChildren().add(new ProductPanel(product,index, this));
-            index++;
-        }
+            productNodeList.add(new ProductPanel(product, index, this));
+            productField.getChildren().add(index,productNodeList.get(index));
+            index++;}
         updateShoppingCart(model.getShoppingCart().getItems());
         updateBottomPanel();
 
@@ -222,14 +227,37 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     void updateProductList(List<Product> products) {
 
         productField.getChildren().clear();
+        int index = 0;
         for (Product product : products) {
-            productField.getChildren().add(new ProductPanel(product, 0, this));
+            index = model.getProducts().indexOf(product);
+            productField.getChildren().add(productNodeList.get(index));
         }
 
     }
+    void updateProduct(Product product) {
+            int index = model.getProducts().indexOf(product);
+            productNodeList.set(index,new ProductPanel(product,index,this));
+            productField.getChildren().remove(index);
+            productField.getChildren().add(index,productNodeList.get(index));
+
+    }
+
+    public void updateProductNode(int index,Product product) {
+        productNodeList.set(index,new ProductPanel(product,index,this));
+        List<Product> productToUpdate= new ArrayList<>();
+        productToUpdate.add(product);
+        updateProductList(productToUpdate);
+    }
+    public void updateAllProductNodes(){
+        productField.getChildren().clear();
+        for (Node node : productNodeList)
+            productField.getChildren().add(node);
+    }
 
     public void updateFrequent(){
-
+        frequentMiddle.getChildren().clear();
+        frequentLeft.getChildren().clear();
+        frequentRight.getChildren().clear();
         Image image;
         ArrayList<Product> products = new ArrayList<>();
         for (Order orders : model.getOrders()){
@@ -240,18 +268,18 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         }
         if (products.size()>0) {
             Product x = mostCommon(products);
-            products.remove(x);
-            frequentMiddle.setImage(model.getImage(x));
+            while (products.contains(x)) products.remove(x);
+            frequentMiddle.getChildren().add(new frequentItem(x,this));
         }
-        if (products.size()>1) {
+        if (products.size()>0) {
             Product y = mostCommon(products);
-            products.remove(y);
-            frequentRight.setImage(model.getImage(y));
+            while (products.contains(y)) products.remove(y);
+            frequentRight.getChildren().add(new frequentItem(y,this));
         }
-        if (products.size()>2) {
+        if (products.size()>0) {
             Product z = mostCommon(products);
-            products.remove(z);
-            frequentLeft.setImage(model.getImage(z));
+            while (products.contains(z)) products.remove(z);
+            frequentLeft.getChildren().add(new frequentItem(z,this));
         }
     }
 
@@ -350,6 +378,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void closeUserOptionsView(){
         mainPageSplitPane.toFront();
         updateProductList(model.getProducts());
+        categoryLabelPane.toBack();
         updateCartAmount();
     }
 
@@ -403,6 +432,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void backToHome(){
         updateProductList(model.getProducts());
         mainPageSplitPane.toFront();
+        categoryLabelPane.toBack();
         updateCartAmount();
     }
     public void nextButtonCart(){
@@ -542,6 +572,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     public void loadCategorys(){
         categoryMenu.getChildren().clear();
         String categorys[] = {
+                "Startsida",
                 "Mejeri",
                 "Chark",
                 "Dricka",
