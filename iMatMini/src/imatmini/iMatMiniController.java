@@ -155,7 +155,12 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     AnchorPane frequentRight;
     @FXML
     AnchorPane frequentLeft;
-
+    @FXML
+    AnchorPane frequentPlaceholder;
+    @FXML
+    Button buttonMoveRight;
+    @FXML
+    Button buttonMoveLeft;
     // Shop pane actions
     @FXML
     private void handleShowAccountAction(ActionEvent event) {
@@ -242,6 +247,17 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     }
 
+    void updateAllProduct(List<Product> products) {
+        productNodeList.clear();
+        productField.getChildren().clear();
+        int index = 0;
+        for (Product product : model.getProducts()) {
+            productNodeList.add(new ProductPanel(product, index, this));
+            productField.getChildren().add(index,productNodeList.get(index));
+            index++;}
+
+    }
+
     public void updateProductNode(int index,Product product) {
         productNodeList.set(index,new ProductPanel(product,index,this));
         List<Product> productToUpdate= new ArrayList<>();
@@ -299,6 +315,21 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         }
 
         return max.getKey();
+    }
+
+    public void moveRight(){
+        Node placeholder;
+        placeholder = frequentLeft.getChildren().get(0);
+        frequentLeft.getChildren().set(0,frequentMiddle.getChildren().get(0));
+        frequentMiddle.getChildren().add(frequentRight.getChildren().get(0));
+        frequentRight.getChildren().add(0,placeholder);
+    }
+    public void moveLeft(){
+        Node placeholder;
+        placeholder = frequentRight.getChildren().get(0);
+        frequentRight.getChildren().set(0,frequentMiddle.getChildren().get(0));
+        frequentMiddle.getChildren().add(frequentLeft.getChildren().get(0));
+        frequentLeft.getChildren().add(0,placeholder);
     }
     
     private void updateBottomPanel() {
@@ -455,7 +486,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
         loadConfirm();
         model.placeOrder();
         wizardFinal.toFront();
+        updateAllProduct(model.getProducts());
         loadOrders();
+        model.getShoppingCart().clear();
     }
     public void backButtonCart(){
         updateProductList(model.getProducts());

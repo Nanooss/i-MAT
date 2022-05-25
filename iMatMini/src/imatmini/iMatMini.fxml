@@ -532,13 +532,9 @@
                                              </font>
                                           </Label>
                                           <ScrollPane hbarPolicy="NEVER" layoutX="35.0" layoutY="78.0" prefHeight="332.0" prefWidth="640.0" vbarPolicy="ALWAYS">
-                                            <content>
-                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="332.0" prefWidth="622.0">
-                                                   <children>
-                                                      <FlowPane fx:id="wizzardCartFlowPane" prefHeight="332.0" prefWidth="622.0" style="-fx-background-color: #f8f8f8;" />
-                                                   </children>
-                                                </AnchorPane>
-                                            </content>
+                                             <content>
+                                                <FlowPane fx:id="wizzardCartFlowPane" prefHeight="332.0" prefWidth="622.0" style="-fx-background-color: #f8f8f8;" />
+                                             </content>
                                           </ScrollPane>
                                           <Label layoutX="514.0" layoutY="37.0" prefHeight="42.0" prefWidth="39.0" text="Totalt:" />
                                           <Label fx:id="cartTotalValue" layoutX="548.0" layoutY="45.0" prefHeight="25.0" prefWidth="132.0" text="xxxxx KR" />
@@ -672,11 +668,7 @@
                                                         <items>
                                                           <AnchorPane maxHeight="250.0" minHeight="250.0" minWidth="250.0" prefHeight="250.0" prefWidth="250.0">
                                                                <children>
-                                                                  <AnchorPane fx:id="frequentRight" layoutX="655.0" layoutY="14.0" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #999999;" />
-                                                                  <AnchorPane fx:id="frequentLeft" layoutX="40.0" layoutY="14.0" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #999999;" />
-                                                                  <AnchorPane layoutX="40.0" layoutY="14.0" opacity="0.5" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #999999;" styleClass="green-border-box" />
-                                                                  <AnchorPane layoutX="655.0" layoutY="14.0" opacity="0.5" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #999999;" />
-                                                                  <AnchorPane fx:id="frequentMiddle" layoutX="333.0" layoutY="14.0" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #999999;" />
+                                                                  <AnchorPane fx:id="frequentPlaceholder" layoutX="333.0" layoutY="14.0" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #999999;" />
                                                                   <AnchorPane fx:id="categoryLabelPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: -fx-background;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                      <children>
                                                                         <Label fx:id="categoryLabel" layoutX="432.0" layoutY="70.0" styleClass="multi-best-green" text="Label">
@@ -686,6 +678,25 @@
                                                                         </Label>
                                                                      </children>
                                                                   </AnchorPane>
+                                                                  <AnchorPane fx:id="frequentRight" layoutX="655.0" layoutY="14.0" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #999999;" />
+                                                                  <AnchorPane fx:id="frequentLeft" layoutX="40.0" layoutY="14.0" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #999999;" />
+                                                                  <AnchorPane layoutX="40.0" layoutY="14.0" opacity="0.5" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #999999;" styleClass="green-border-box">
+                                                                     <children>
+                                                                        <Button fx:id="buttonMoveLeft" layoutX="150.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveLeft" text="&lt;">
+                                                                           <font>
+                                                                              <Font size="20.0" />
+                                                                           </font>
+                                                                        </Button>
+                                                                     </children></AnchorPane>
+                                                                  <AnchorPane layoutX="655.0" layoutY="14.0" opacity="0.5" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #999999;">
+                                                                     <children>
+                                                                        <Button fx:id="buttonMoveRight" layoutX="150.0" layoutY="78.0" mnemonicParsing="false" onAction="#moveRight" text="&gt;">
+                                                                           <font>
+                                                                              <Font size="20.0" />
+                                                                           </font>
+                                                                        </Button>
+                                                                     </children></AnchorPane>
+                                                                  <AnchorPane fx:id="frequentMiddle" layoutX="333.0" layoutY="14.0" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #999999;" />
                                                                </children>
                                                             </AnchorPane>
                                                             <AnchorPane prefHeight="200.0" prefWidth="200.0">
