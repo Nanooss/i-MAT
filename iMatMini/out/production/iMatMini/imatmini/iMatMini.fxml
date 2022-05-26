@@ -697,6 +697,28 @@
                                                                         </Button>
                                                                      </children></AnchorPane>
                                                                   <AnchorPane fx:id="frequentMiddle" layoutX="333.0" layoutY="14.0" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #999999;" />
+                                                                  <AnchorPane fx:id="welcomeWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: -fx-background;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                     <children>
+                                                                        <Label alignment="CENTER" layoutX="238.0" layoutY="14.0" prefHeight="83.0" prefWidth="559.0" text="Välkommen till i-Mat">
+                                                                           <font>
+                                                                              <Font size="56.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <Label alignment="CENTER" layoutX="407.0" layoutY="97.0" text="Snabb guide för att hjälpa din upplevelse!" />
+                                                                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="305.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../GreenPictures/UserIcon.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="305.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@../GreenPictures/ShoppingCartImage.png" />
+                                                                           </image>
+                                                                        </ImageView>
+                                                                        <Label layoutX="338.0" layoutY="129.0" prefHeight="17.0" prefWidth="442.0" text="Under denna knapp hittar du dina favoriter, gamla ordar och sätter upp din profil! " />
+                                                                        <Label layoutX="338.0" layoutY="189.0" text="Här har du din varukorg samt kassa!" />
+                                                                     </children>
+                                                                  </AnchorPane>
                                                                </children>
                                                             </AnchorPane>
                                                             <AnchorPane prefHeight="200.0" prefWidth="200.0">

@@ -161,6 +161,8 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     Button buttonMoveRight;
     @FXML
     Button buttonMoveLeft;
+    @FXML
+    AnchorPane welcomeWindow;
     // Shop pane actions
     @FXML
     private void handleShowAccountAction(ActionEvent event) {
@@ -286,17 +288,20 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
             Product x = mostCommon(products);
             while (products.contains(x)) products.remove(x);
             frequentMiddle.getChildren().add(new frequentItem(x,this));
+            if (products.size()>0) {
+                Product y = mostCommon(products);
+                while (products.contains(y)) products.remove(y);
+                frequentRight.getChildren().add(new frequentItem(y, this));
+                if (products.size() > 0) {
+                    Product z = mostCommon(products);
+                    while (products.contains(z)) products.remove(z);
+                    frequentLeft.getChildren().add(new frequentItem(z, this));
+                    welcomeWindow.toBack();
+                }
+            }
         }
-        if (products.size()>0) {
-            Product y = mostCommon(products);
-            while (products.contains(y)) products.remove(y);
-            frequentRight.getChildren().add(new frequentItem(y,this));
-        }
-        if (products.size()>0) {
-            Product z = mostCommon(products);
-            while (products.contains(z)) products.remove(z);
-            frequentLeft.getChildren().add(new frequentItem(z,this));
-        }
+
+
     }
 
     public static <T> T mostCommon(List<T> list) {
