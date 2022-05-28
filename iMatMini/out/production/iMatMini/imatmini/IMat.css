@@ -33,6 +33,25 @@
     -fx-font-size: 24;
 }
 
+.pliancy{
+    -fx-background-color: #E3E3E3;
+}
+
+.pliancy-button-hover:hover{
+-fx-opacity: 80;
+}
+
+.pliancy-button-pressed:pressed{
+
+}
+
+
+.pliancy-hover:hover{
+    -fx-background-color: #FFFFFF;
+}
+.pliancy-pressed:pressed{
+    -fx-background-color: #AAAAAA;
+}
 
 .green-border-style{
     -fx-border-color: #519a7b;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root onMouseClicked="#expandOrder" prefHeight="100.0" prefWidth="640.0" styleClass="black-border2" stylesheets="@IMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root onMouseClicked="#expandOrder" prefHeight="100.0" prefWidth="640.0" stylesheets="@IMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label layoutX="34.0" layoutY="24.0" prefHeight="27.0" prefWidth="80.0" styleClass="text-medium" text="order-nr:">
          <font>
@@ -59,4 +60,9 @@
          </font>
       </Label>
    </children>
+   <styleClass>
+      <String fx:value="black-border2" />
+      <String fx:value="pliancy-button-hover" />
+      <String fx:value="pliancy-button-pressed" />
+   </styleClass>
 </fx:root>

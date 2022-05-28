@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -7,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root onMouseClicked="#updateCategory" prefHeight="64.0" prefWidth="216.0" style="-fx-border-color: #000000;" styleClass="gray-background" stylesheets="@IMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root onMouseClicked="#updateCategory" prefHeight="64.0" prefWidth="216.0" style="-fx-border-color: #000000;" stylesheets="@IMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="categoryName" layoutX="14.0" layoutY="19.0" prefHeight="26.0" prefWidth="160.0" styleClass="text-medium-bold" text="Godis">
          <font>
@@ -24,4 +25,9 @@
          </graphic>
       </Button>
    </children>
+   <styleClass>
+      <String fx:value="gray-background" />
+      <String fx:value="pliancy-hover" />
+      <String fx:value="pliancy-pressed" />
+   </styleClass>
 </fx:root>
