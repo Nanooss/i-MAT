@@ -12,16 +12,20 @@
 <fx:root fx:id="ItemFrame" maxHeight="283.0" maxWidth="191.0" minHeight="224.0" minWidth="140.0" prefHeight="283.0" prefWidth="191.0" style="-fx-border-radius: 4;" stylesheets="@IMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="imageView" fitHeight="129.0" fitWidth="182.0" layoutX="6.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" styleClass="image-border" />
-      <Label fx:id="nameLabel" alignment="TOP_LEFT" layoutX="5.0" layoutY="132.0" prefHeight="58.0" prefWidth="182.0" text="Marabou mjolkchoklad" wrapText="true">
+      <Label fx:id="nameLabel" alignment="TOP_LEFT" layoutX="5.0" layoutY="132.0" prefHeight="58.0" prefWidth="182.0" styleClass="text-medium" text="Marabou mjolkchoklad" wrapText="true">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="prizeLabel" alignment="CENTER" layoutX="41.0" layoutY="190.0" prefHeight="24.0" prefWidth="120.0" styleClass="black-thin-round-border" text="16.95 kr ">
+      <Label fx:id="prizeLabel" alignment="CENTER" layoutX="36.0" layoutY="190.0" prefHeight="24.0" prefWidth="120.0" text="16.95 kr ">
          <font>
             <Font size="18.0" />
-         </font></Label>
-      <Label fx:id="ecoLabel" layoutX="118.0" layoutY="98.0" text="Ekologisk" textFill="#5cc343">
+         </font>
+         <styleClass>
+            <String fx:value="black-thin-round-border" />
+            <String fx:value="text-medium-bold" />
+         </styleClass></Label>
+      <Label fx:id="ecoLabel" layoutX="101.0" layoutY="109.0" styleClass="text-medium-bold" text="Ekologisk" textFill="#5cc343">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
@@ -61,12 +65,19 @@
             </AnchorPane>
             <AnchorPane fx:id="ItemFrameLaggTIll" prefHeight="35.0" prefWidth="120.0" style="-fx-background-color: -fx-background;">
                <children>
-                  <Label fx:id="itemFrameLaggTill" alignment="CENTER" contentDisplay="TOP" layoutX="12.0" layoutY="7.0" onMouseClicked="#handleAddAction" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: #E3E3E3; -fx-border-radius: 4; -fx-border-color: #000000; -fx-background-radius: 4;" text="Lägg Till" />
+                  <Label fx:id="itemFrameLaggTill" alignment="CENTER" contentDisplay="TOP" layoutX="12.0" layoutY="7.0" onMouseClicked="#handleAddAction" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: #E3E3E3; -fx-border-radius: 4; -fx-border-color: #000000; -fx-background-radius: 4;" styleClass="text-medium" stylesheets="@IMat.css" text="Lägg Till" />
                </children>
             </AnchorPane>
          </children>
       </StackPane>
-      <Button fx:id="toggleFavorites" layoutX="8.0" layoutY="7.0" mnemonicParsing="false" onAction="#toggleFavorite" prefHeight="43.0" prefWidth="51.0" text="Favorite" />
+      <Button layoutX="-7.0" layoutY="-10.0" mnemonicParsing="false" onAction="#toggleFavorite" prefHeight="50.0" prefWidth="64.0" style="-fx-background-color: rgba(0,0,0,0.0);">
+         <graphic>
+            <Label fx:id="toggleFavorites" text="♡">
+               <font>
+                  <Font size="52.0" />
+               </font>
+            </Label>
+         </graphic></Button>
    </children>
    <styleClass>
       <String fx:value="green-icon-border" />

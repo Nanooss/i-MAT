@@ -9,37 +9,37 @@
 
 <fx:root onMouseClicked="#expandOrder" prefHeight="100.0" prefWidth="640.0" styleClass="black-border2" stylesheets="@IMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="34.0" layoutY="24.0" prefHeight="25.0" prefWidth="67.0" text="order-nr:">
+      <Label layoutX="34.0" layoutY="24.0" prefHeight="27.0" prefWidth="80.0" styleClass="text-medium" text="order-nr:">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="orderNrID" layoutX="101.0" layoutY="24.0" prefHeight="25.0" prefWidth="67.0" text="1234567">
+      <Label fx:id="orderNrID" layoutX="114.0" layoutY="24.0" prefHeight="27.0" prefWidth="80.0" styleClass="text-medium" text="1234567">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="orderDate" layoutX="34.0" layoutY="49.0" prefHeight="25.0" prefWidth="219.0" text="2022-05-10">
+      <Label fx:id="orderDate" layoutX="143.0" layoutY="49.0" prefHeight="27.0" prefWidth="102.0" styleClass="text-medium" text="2022-05-10">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="orderCard" layoutX="316.0" layoutY="24.0" prefHeight="25.0" prefWidth="89.0" text="MasterCard:">
+      <Label fx:id="orderCard" layoutX="290.0" layoutY="24.0" prefHeight="27.0" prefWidth="102.0" styleClass="text-medium" text="MasterCard:">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="orderCardNumbers" layoutX="405.0" layoutY="24.0" prefHeight="25.0" prefWidth="172.0" text="xxxx-xxxx-xxxx-1234">
+      <Label fx:id="orderCardNumbers" layoutX="392.0" layoutY="24.0" prefHeight="27.0" prefWidth="163.0" styleClass="text-medium" text="xxxx-xxxx-xxxx-1234">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label layoutX="316.0" layoutY="49.0" prefHeight="25.0" prefWidth="43.0" text="Total:">
+      <Label layoutX="290.0" layoutY="49.0" prefHeight="27.0" prefWidth="50.0" styleClass="text-medium" text="Total:">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="orderTotalPrice" layoutX="359.0" layoutY="49.0" prefHeight="25.0" prefWidth="117.0" text="10000 kr">
+      <Label fx:id="orderTotalPrice" layoutX="334.0" layoutY="49.0" prefHeight="25.0" prefWidth="117.0" styleClass="text-medium" text="10000 kr">
          <font>
             <Font size="16.0" />
          </font>
@@ -53,5 +53,10 @@
             </ImageView>
          </graphic>
       </Button>
+      <Label layoutX="34.0" layoutY="49.0" prefHeight="27.0" prefWidth="117.0" styleClass="text-medium" text="order-datum:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
    </children>
 </fx:root>

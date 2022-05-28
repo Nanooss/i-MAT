@@ -32,8 +32,7 @@ public class ProductPanel extends AnchorPane {
     @FXML Label itemFrameLaggTill;
     @FXML AnchorPane ItemFrameAddandDeleteItem;
     @FXML TextField ItemFrameAmount;
-    @FXML
-    Button toggleFavorites;
+    @FXML Label toggleFavorites;
     
     private Model model = Model.getInstance();
 
@@ -73,8 +72,12 @@ public class ProductPanel extends AnchorPane {
                 ItemFrameAmount.setText(String.valueOf(Math.round(model.getShoppingCart().getItems().get(index).getAmount())));
             }
         }
-        if(model.getFavorites().contains(product)) toggleFavorites.setText("Remove");
-        else toggleFavorites.setText("Add");
+        if(model.getFavorites().contains(product)){
+            toggleFavorites.setText("♥");
+        }
+        else {
+            toggleFavorites.setText("♡");
+        }
     }
     
 
@@ -149,11 +152,11 @@ public class ProductPanel extends AnchorPane {
     public void toggleFavorite(){
         if(model.getFavorites().contains(product)) {
             removeFavorite();
-            toggleFavorites.setText("Add");
+            toggleFavorites.setText("♡");
         }
         else{
             addToFavorites();
-            toggleFavorites.setText("Remove");
+            toggleFavorites.setText("♥");
         }
     }
 

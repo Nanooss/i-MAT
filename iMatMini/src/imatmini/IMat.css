@@ -1,3 +1,37 @@
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('fonts/Roboto-Bold.ttf');
+}
+@font-face {
+    font-family: 'Roboto Regular';
+    src: url('fonts/Roboto-Regular.ttf');
+}
+
+.text-big {
+    -fx-font-family: "Roboto Regular";
+    -fx-font-size: 42;
+}
+.text-big-bold {
+    -fx-font-family: "Roboto Bold";
+    -fx-font-size: 42;
+}
+.text-small{
+    -fx-font-family: "Roboto Regular";
+    -fx-font-size: 14;
+}
+
+.text-medium{
+    -fx-font-family: "Roboto Regular";
+    -fx-font-size: 18;
+}
+.text-medium-bold{
+    -fx-font-family: "Roboto Bold";
+    -fx-font-size: 18;
+}
+.text-medium-big{
+    -fx-font-family: "Roboto Regular";
+    -fx-font-size: 24;
+}
 
 
 .green-border-style{

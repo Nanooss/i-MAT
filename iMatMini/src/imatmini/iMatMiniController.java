@@ -14,6 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import se.chalmers.cse.dat216.project.*;
 
@@ -142,7 +143,9 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
 
     //CartUpdate
     @FXML Label cartAmount;
-    @FXML Label redCircle;
+    @FXML
+    ImageView redCircle;
+    @FXML AnchorPane cartAmountAnchorPane;
 
     //Favorites
     @FXML AnchorPane favoriteMenuAnchorPane;
@@ -628,8 +631,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     //cartAmount
     public void updateCartAmount(){
         if(model.getShoppingCart().getItems().size() > 0){
-            redCircle.setOpacity(100);
-            cartAmount.setOpacity(100);
+            cartAmountAnchorPane.setOpacity(100);
             int amountInCart=0;
             for (ShoppingItem item : model.getShoppingCart().getItems()){
                 amountInCart += Math.round(item.getAmount());
@@ -637,8 +639,7 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
             if(amountInCart > 99) cartAmount.setText(99 + "+");
             else cartAmount.setText(String.valueOf(amountInCart));
         }else{
-            redCircle.setOpacity(0);
-            cartAmount.setOpacity(0);
+            cartAmountAnchorPane.setOpacity(0);
         }
     }
 

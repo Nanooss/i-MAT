@@ -28,19 +28,27 @@
                                  <children>
                                     <AnchorPane layoutX="669.0" prefHeight="432.0" prefWidth="355.0" styleClass="varukorg-options-anchorpane">
                                        <children>
-                                          <Button alignment="CENTER" layoutX="57.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" prefHeight="53.0" prefWidth="242.0" styleClass="button-varukorg" text="Till Kassan" textFill="#519a7b">
+                                          <Button alignment="CENTER" layoutX="57.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleBuyItemsAction" prefHeight="53.0" prefWidth="242.0" text="Till Kassan" textFill="#519a7b">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
+                                             <styleClass>
+                                                <String fx:value="button-varukorg" />
+                                                <String fx:value="text-medium-big" />
+                                             </styleClass>
                                           </Button>
-                                          <Button alignment="CENTER" layoutX="57.0" layoutY="90.0" mnemonicParsing="false" onAction="#handleClearCartAction" prefHeight="53.0" prefWidth="242.0" styleClass="button-varukorg" text="Töm Varukorg" textFill="#519a7b">
+                                          <Button alignment="CENTER" layoutX="57.0" layoutY="90.0" mnemonicParsing="false" onAction="#handleClearCartAction" prefHeight="53.0" prefWidth="242.0" text="Töm Varukorg" textFill="#519a7b">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
+                                             <styleClass>
+                                                <String fx:value="button-varukorg" />
+                                                <String fx:value="text-medium-big" />
+                                             </styleClass>
                                           </Button>
                                        </children>
                                     </AnchorPane>
-                                    <Label alignment="CENTER" layoutX="67.0" layoutY="20.0" prefHeight="53.0" prefWidth="546.0" text="Varukorg" textFill="#519a7b" underline="true">
+                                    <Label alignment="CENTER" layoutX="67.0" layoutY="20.0" prefHeight="53.0" prefWidth="546.0" styleClass="text-medium-big" text="Varukorg" textFill="#519a7b" underline="true">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
@@ -63,22 +71,22 @@
                                           </AnchorPane>
                                       </content>
                                     </ScrollPane>
-                                    <Label fx:id="costLabel" layoutX="524.0" layoutY="378.0" prefHeight="53.0" prefWidth="177.0" text="123.45 kr" textFill="#519a7b">
+                                    <Label fx:id="costLabel" layoutX="524.0" layoutY="378.0" prefHeight="53.0" prefWidth="177.0" styleClass="text-medium-big" text="123.45 kr" textFill="#519a7b">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
                                     </Label>
-                                    <Label alignment="CENTER_RIGHT" layoutX="335.0" layoutY="378.0" prefHeight="53.0" prefWidth="177.0" text="Total:" textFill="#519a7b">
+                                    <Label alignment="CENTER_RIGHT" layoutX="335.0" layoutY="378.0" prefHeight="53.0" prefWidth="177.0" styleClass="text-medium-big" text="Total:" textFill="#519a7b">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
                                     </Label>
-                                    <Label alignment="CENTER_RIGHT" layoutX="335.0" layoutY="339.0" prefHeight="53.0" prefWidth="177.0" text="Antal Varor:" textFill="#519a7b">
+                                    <Label alignment="CENTER_RIGHT" layoutX="335.0" layoutY="339.0" prefHeight="53.0" prefWidth="177.0" styleClass="text-medium-big" text="Antal Varor:" textFill="#519a7b">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
                                     </Label>
-                                    <Label fx:id="itemsLabel" layoutX="524.0" layoutY="339.0" prefHeight="53.0" prefWidth="177.0" text="5 st" textFill="#519a7b">
+                                    <Label fx:id="itemsLabel" layoutX="524.0" layoutY="339.0" prefHeight="53.0" prefWidth="177.0" styleClass="text-medium-big" text="5 st" textFill="#519a7b">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
@@ -87,259 +95,6 @@
                               </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <StackPane fx:id="multiWindow" prefHeight="150.0" prefWidth="200.0">
-                           <children>
-                              <AnchorPane fx:id="accountPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
-                                 <children>
-                                    <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" styleClass="green-outer-border-style">
-                                       <children>
-                                          <ComboBox fx:id="cardTypeCombo" layoutX="597.0" layoutY="70.0" prefHeight="45.0" prefWidth="280.0" promptText="Korttyp" styleClass="green-border-style" />
-                                          <TextField fx:id="numberTextField" layoutX="597.0" layoutY="210.0" prefHeight="45.0" prefWidth="280.0" promptText="XXXX-XXXX-XXXX-XXXX">
-                                             <styleClass>
-                                                <String fx:value="green-border-style" />
-                                                <String fx:value="gray-background" />
-                                             </styleClass>
-                                          </TextField>
-                                          <ComboBox fx:id="monthCombo" layoutX="597.0" layoutY="280.0" prefHeight="45.0" prefWidth="68.0" promptText="MM" styleClass="green-border-style" />
-                                          <ComboBox fx:id="yearCombo" layoutX="737.0" layoutY="280.0" prefHeight="45.0" prefWidth="64.0" promptText="ÅÅ" styleClass="green-border-style" />
-                                          <Label layoutX="695.0" layoutY="285.0" text="/" textAlignment="RIGHT">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="cvcField" layoutX="833.0" layoutY="280.0" prefHeight="45.0" prefWidth="43.0" promptText="CVC">
-                                             <styleClass>
-                                                <String fx:value="green-border-style" />
-                                                <String fx:value="gray-background" />
-                                             </styleClass>
-                                          </TextField>
-                                          <Label fx:id="purchasesLabel" layoutX="60.0" layoutY="374.0" text="3747 tidigare inköp hos iMat" />
-                                          <Button layoutX="494.0" layoutY="383.0" mnemonicParsing="false" onAction="#handleDoneAction" text="Klar" />
-                                          <Label alignment="CENTER" layoutX="423.0" layoutY="14.0" prefHeight="35.0" prefWidth="177.0" text="Dina Uppgifter" textFill="#519a7b" underline="true">
-                                             <font>
-                                                <Font name="System Bold" size="24.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField fx:id="dinaUppgifterEfternamn" layoutX="143.0" layoutY="140.0" prefHeight="45.0" prefWidth="280.0" promptText="Efternamn">
-                                             <styleClass>
-                                                <String fx:value="green-border-style" />
-                                                <String fx:value="gray-background" />
-                                             </styleClass>
-                                          </TextField>
-                                          <Button fx:id="dinaUppgifterAngra" layoutX="288.0" layoutY="350.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="132.0" styleClass="green-border-style" text="Ångra" textFill="#519a7b">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Button>
-                                          <Button fx:id="dinaUppgifterSpara" layoutX="600.0" layoutY="350.0" mnemonicParsing="false" onAction="#saveUser" prefHeight="46.0" prefWidth="132.0" styleClass="green-border-style" text="Spara" textFill="#519a7b">
-                                             <font>
-                                                <Font size="24.0" />
-                                             </font>
-                                          </Button>
-                                          <TextField fx:id="dinaUppgifterNamn" layoutX="143.0" layoutY="70.0" prefHeight="45.0" prefWidth="280.0" promptText="Förnamn">
-                                             <styleClass>
-                                                <String fx:value="green-border-style" />
-                                                <String fx:value="gray-background" />
-                                             </styleClass>
-                                          </TextField>
-                                          <TextField fx:id="dinaUppgifterLeveransadress" layoutX="143.0" layoutY="280.0" prefHeight="45.0" prefWidth="280.0" promptText="Leveransadress">
-                                             <styleClass>
-                                                <String fx:value="green-border-style" />
-                                                <String fx:value="gray-background" />
-                                             </styleClass>
-                                          </TextField>
-                                          <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#openUserOptionsView" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #FFFFFF;">
-                                             <graphic>
-                                                <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../GreenPictures/BackwardsarrowWithCircle.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                          </Button>
-                                          <TextField fx:id="dinaUppgifterMail" layoutX="143.0" layoutY="210.0" prefHeight="45.0" prefWidth="280.0" promptText="Mail">
-                                             <styleClass>
-                                                <String fx:value="green-border-style" />
-                                                <String fx:value="gray-background" />
-                                             </styleClass>
-                                          </TextField>
-                                          <TextField fx:id="nameTextField" layoutX="597.0" layoutY="140.0" prefHeight="45.0" prefWidth="280.0" promptText="Kortinnehavare">
-                                             <styleClass>
-                                                <String fx:value="gray-background" />
-                                                <String fx:value="green-border-style" />
-                                             </styleClass>
-                                          </TextField>
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane fx:id="multiGamlaBPane" prefHeight="200.0" prefWidth="200.0">
-                                 <children>
-                                    <StackPane layoutX="138.0" layoutY="136.0" minHeight="-Infinity" prefHeight="550.0" prefWidth="1024.0">
-                                       <children>
-                                          <AnchorPane fx:id="multimultiGamla" prefHeight="720.0" prefWidth="1024.0" style="-fx-background-color: f8f8f8;" styleClass="multi-best-green">
-                                             <children>
-                                                <Label alignment="CENTER" layoutX="406.0" layoutY="15.0" text="Gamla Beställningar" textFill="#519a7b" underline="true">
-                                                   <font>
-                                                      <Font size="24.0" />
-                                                   </font>
-                                                </Label>
-                                                <Button layoutX="18.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeOrderView" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #f8f8f8;">
-                                                   <graphic>
-                                                      <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../GreenPictures/BackwardsarrowWithCircle.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                   </graphic>
-                                                </Button>
-                                                <ScrollPane hbarPolicy="NEVER" layoutX="181.0" layoutY="93.0" prefHeight="513.0" prefWidth="660.0" vbarPolicy="ALWAYS">
-                                                   <content>
-                                                      <FlowPane fx:id="oldOrdersFlowPane" prefHeight="507.0" prefWidth="646.0" />
-                                                   </content>
-                                                </ScrollPane>
-                                             </children>
-                                          </AnchorPane>
-                                          <AnchorPane fx:id="expandedOrderView" minWidth="-Infinity" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: f8f8f8;" styleClass="multi-best-green">
-                                             <children>
-                                                <Label fx:id="orderNumber" alignment="CENTER" layoutX="404.0" layoutY="14.0" prefHeight="35.0" prefWidth="203.0" text="7564774" textFill="#519a7b" underline="true">
-                                                   <font>
-                                                      <Font size="24.0" />
-                                                   </font>
-                                                </Label>
-                                                <Button layoutX="18.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeExpanded" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #f8f8f8;">
-                                                   <graphic>
-                                                      <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                                                         <image>
-                                                            <Image url="@../GreenPictures/BackwardsarrowWithCircle.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                   </graphic>
-                                                </Button>
-                                                <ScrollPane hbarPolicy="NEVER" layoutX="187.0" layoutY="93.0" prefHeight="400.0" prefWidth="638.0" vbarPolicy="ALWAYS">
-                                                   <content>
-                                                      <FlowPane fx:id="multigammelgam" prefHeight="399.0" prefWidth="622.0" style="-fx-background-color: #f8f8f8;" />
-                                                   </content>
-                                                </ScrollPane>
-                                                <Label layoutX="364.0" layoutY="45.0" text="Datum" textFill="#519a7b">
-                                                   <font>
-                                                      <Font size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="dateOldOrder" alignment="CENTER" layoutX="323.0" layoutY="70.0" prefHeight="25.0" prefWidth="129.0" text="1984-04-20" textFill="#519a7b">
-                                                   <font>
-                                                      <Font size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label layoutX="583.0" layoutY="45.0" text="Pris" textFill="#519a7b">
-                                                   <font>
-                                                      <Font size="16.0" />
-                                                   </font>
-                                                </Label>
-                                                <Label fx:id="totalPriceOldOrder" layoutX="583.0" layoutY="70.0" text="123,45 kr" textFill="#519a7b">
-                                                   <font>
-                                                      <Font size="16.0" />
-                                                   </font>
-                                                </Label>
-                                             </children>
-                                          </AnchorPane>
-                                       </children>
-                                    </StackPane>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane fx:id="favoriteMenuAnchorPane" prefHeight="200.0" prefWidth="200.0">
-                                 <children>
-                                    <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" styleClass="green-outer-border-style">
-                                       <children>
-                                          <Label alignment="CENTER" layoutX="132.0" layoutY="40.0" prefHeight="53.0" prefWidth="743.0" text="Favoriter" textFill="#519a7b" underline="true">
-                                             <font>
-                                                <Font size="32.0" />
-                                             </font>
-                                          </Label>
-                                          <Button layoutX="23.0" layoutY="23.0" mnemonicParsing="false" onAction="#closeAccountView" prefHeight="18.0" prefWidth="18.0" style="-fx-background-color: #FFFFFF;">
-                                             <graphic>
-                                                <ImageView fitHeight="54.0" fitWidth="34.0" onMouseClicked="#closeUserOptionsView" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../GreenPictures/Cross.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                          </Button>
-                                          <ScrollPane layoutX="161.0" layoutY="115.0" prefHeight="289.0" prefWidth="685.0">
-                                             <content>
-                                                <FlowPane fx:id="favoritesFlowPane" prefHeight="286.0" prefWidth="681.0" />
-                                             </content>
-                                          </ScrollPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane fx:id="userMenyAnchorPane" prefHeight="200.0" prefWidth="200.0">
-                                 <children>
-                                    <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" styleClass="green-outer-border-style">
-                                       <children>
-                                          <AnchorPane fx:id="bestallningarMulti" layoutX="73.0" layoutY="123.0" onMouseClicked="#openOrderView" prefHeight="256.0" prefWidth="256.0" styleClass="green-border-style">
-                                             <children>
-                                                <Label alignment="CENTER" layoutX="50.0" layoutY="178.0" prefHeight="56.0" prefWidth="153.0" text="Beställningar" textFill="#519a7b">
-                                                   <font>
-                                                      <Font size="20.0" />
-                                                   </font>
-                                                </Label>
-                                                <ImageView fitHeight="105.0" fitWidth="146.0" layoutX="69.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../GreenPictures/GreenCarImage.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </children>
-                                          </AnchorPane>
-                                          <Label fx:id="greetingMulti" layoutX="132.0" layoutY="40.0" prefHeight="53.0" prefWidth="743.0" text="Hej Jag!" textFill="#519a7b">
-                                             <font>
-                                                <Font size="32.0" />
-                                             </font>
-                                          </Label>
-                                          <AnchorPane fx:id="dinaUppgifterMulti" layoutX="709.0" layoutY="123.0" onMouseClicked="#openAccountView" prefHeight="256.0" prefWidth="256.0" styleClass="green-border-style">
-                                             <children>
-                                                <Label alignment="CENTER" layoutX="50.0" layoutY="178.0" prefHeight="56.0" prefWidth="153.0" text="Dina uppgifter" textFill="#519a7b">
-                                                   <font>
-                                                      <Font size="20.0" />
-                                                   </font>
-                                                </Label>
-                                                <ImageView fitHeight="105.0" fitWidth="146.0" layoutX="90.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../GreenPictures/GreenDocumentsImage.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </children>
-                                          </AnchorPane>
-                                          <Button layoutX="23.0" layoutY="23.0" mnemonicParsing="false" onAction="#closeUserOptionsView" prefHeight="18.0" prefWidth="18.0" style="-fx-background-color: #FFFFFF;">
-                                             <graphic>
-                                                <ImageView fitHeight="54.0" fitWidth="34.0" onMouseClicked="#closeUserOptionsView" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../GreenPictures/Cross.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </graphic>
-                                          </Button>
-                                          <AnchorPane fx:id="dinaUppgifterMulti1" layoutX="400.0" layoutY="123.0" onMouseClicked="#openFavorites" prefHeight="256.0" prefWidth="256.0" styleClass="green-border-style">
-                                             <children>
-                                                <Label alignment="CENTER" layoutX="50.0" layoutY="178.0" prefHeight="56.0" prefWidth="153.0" text="Favoriter" textFill="#519a7b">
-                                                   <font>
-                                                      <Font size="20.0" />
-                                                   </font>
-                                                </Label>
-                                                <ImageView fitHeight="105.0" fitWidth="146.0" layoutX="90.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@../GreenPictures/GreenDocumentsImage.png" />
-                                                   </image>
-                                                </ImageView>
-                                             </children>
-                                          </AnchorPane>
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </AnchorPane>
-                           </children>
-                        </StackPane>
                         <AnchorPane fx:id="wizzardPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #e5e5e5;">
                            <children>
                               <AnchorPane prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #519A7B;">
@@ -516,17 +271,25 @@
                                     </AnchorPane>
                                     <AnchorPane fx:id="wizzardVarukorg" prefHeight="508.0" prefWidth="700.0" style="-fx-background-color: #f8f8f8;">
                                        <children>
-                                          <Button fx:id="buttonCart" alignment="CENTER" layoutX="405.0" layoutY="427.0" mnemonicParsing="false" onAction="#nextButtonCart" prefHeight="64.0" prefWidth="256.0" styleClass="button-varukorg" text="Bekräfta" textFill="#519a7b">
+                                          <Button fx:id="buttonCart" alignment="CENTER" layoutX="473.0" layoutY="427.0" mnemonicParsing="false" onAction="#nextButtonCart" prefHeight="64.0" prefWidth="188.0" text="Bekräfta" textFill="#519a7b">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
+                                             <styleClass>
+                                                <String fx:value="button-varukorg" />
+                                                <String fx:value="text-medium-big" />
+                                             </styleClass>
                                           </Button>
-                                          <Button alignment="CENTER" layoutX="39.0" layoutY="427.0" mnemonicParsing="false" onAction="#backButtonCart" prefHeight="64.0" prefWidth="256.0" styleClass="button-varukorg" text="Tillbaka" textFill="#519a7b">
+                                          <Button alignment="CENTER" layoutX="39.0" layoutY="427.0" mnemonicParsing="false" onAction="#backButtonCart" prefHeight="64.0" prefWidth="197.0" text="Tillbaka" textFill="#519a7b">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
+                                             <styleClass>
+                                                <String fx:value="button-varukorg" />
+                                                <String fx:value="text-medium-big" />
+                                             </styleClass>
                                           </Button>
-                                          <Label alignment="CENTER" layoutX="225.0" layoutY="30.0" prefHeight="35.0" prefWidth="250.0" text="Varukorg" textFill="#519a7b" underline="true">
+                                          <Label alignment="CENTER" layoutX="225.0" layoutY="30.0" prefHeight="35.0" prefWidth="250.0" styleClass="text-medium-big" text="Varukorg" textFill="#519a7b" underline="true">
                                              <font>
                                                 <Font size="32.0" />
                                              </font>
@@ -536,12 +299,16 @@
                                                 <FlowPane fx:id="wizzardCartFlowPane" prefHeight="332.0" prefWidth="622.0" style="-fx-background-color: #f8f8f8;" />
                                              </content>
                                           </ScrollPane>
-                                          <Label layoutX="514.0" layoutY="37.0" prefHeight="42.0" prefWidth="39.0" text="Totalt:" />
-                                          <Label fx:id="cartTotalValue" layoutX="548.0" layoutY="45.0" prefHeight="25.0" prefWidth="132.0" text="xxxxx KR" />
-                                          <Button alignment="CENTER" layoutX="35.0" layoutY="17.0" mnemonicParsing="false" onAction="#handleClearCartAction" prefHeight="53.0" prefWidth="242.0" styleClass="button-varukorg" text="Töm Varukorg" textFill="#519a7b">
+                                          <Label layoutX="523.0" layoutY="45.0" prefHeight="42.0" prefWidth="89.0" styleClass="text-medium-bold" text="Totalt:" />
+                                          <Label fx:id="cartTotalValue" layoutX="579.0" layoutY="54.0" prefHeight="25.0" prefWidth="132.0" styleClass="text-medium-bold" text="xxxxx KR" />
+                                          <Button alignment="CENTER" layoutX="253.0" layoutY="429.0" mnemonicParsing="false" onAction="#handleClearCartAction" prefHeight="61.0" prefWidth="204.0" style="-fx-background-color: #881111;" text="Töm Varukorg" textFill="#519a7b">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
+                                             <styleClass>
+                                                <String fx:value="button-varukorg" />
+                                                <String fx:value="text-medium-big" />
+                                             </styleClass>
                                           </Button>
                                        </children>
                                     </AnchorPane>
@@ -603,12 +370,16 @@
                           <items>
                               <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1280.0" style="-fx-background-color: #519A7B;" styleClass="black-border">
                                  <children>
-                                    <TextField fx:id="searchField" layoutX="216.0" layoutY="20.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleSearchAction" prefHeight="60.0" prefWidth="600.0" promptText="Sök vara" styleClass="search-button">
+                                    <TextField fx:id="searchField" layoutX="216.0" layoutY="20.0" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleSearchAction" prefHeight="60.0" prefWidth="600.0" promptText="Sök vara">
                                        <font>
                                           <Font size="24.0" />
                                        </font>
+                                       <styleClass>
+                                          <String fx:value="search-button" />
+                                          <String fx:value="text-medium-big" />
+                                       </styleClass>
                                     </TextField>
-                                    <Label layoutX="13.0" layoutY="25.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="144.0" text="i-Mat" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="20.0">
+                                    <Label layoutX="13.0" layoutY="25.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="144.0" styleClass="text-big-bold" text="i-Mat" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="20.0">
                                        <font>
                                           <Font name="Times New Roman" size="36.0" />
                                        </font>
@@ -627,16 +398,6 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
-                                    <Label fx:id="redCircle" layoutX="1060.0" layoutY="20.0" prefHeight="48.0" prefWidth="50.0" text="●" textFill="#ee0000">
-                                       <font>
-                                          <Font size="59.0" />
-                                       </font>
-                                    </Label>
-                                    <Label fx:id="cartAmount" alignment="CENTER" contentDisplay="CENTER" layoutX="1064.0" layoutY="52.0" prefHeight="31.0" prefWidth="28.0" text="99+" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="12.0" />
-                                       </font>
-                                    </Label>
                                     <Button fx:id="UserIconButton" layoutX="1143.0" layoutY="26.0" mnemonicParsing="false" onAction="#openUserAction" prefHeight="48.0" prefWidth="48.0" styleClass="black-thin-round-border">
                                        <graphic>
                                           <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -646,6 +407,16 @@
                                           </ImageView>
                                        </graphic>
                                     </Button>
+                                    <AnchorPane fx:id="cartAmountAnchorPane" layoutX="1064.0" layoutY="55.0" prefHeight="21.0" prefWidth="21.0" style="-fx-background-color: #DD0000; -fx-background-radius: 15px;">
+                                       <children>
+                                          <Label fx:id="cartAmount" alignment="CENTER" contentDisplay="CENTER" layoutY="-1.0" prefHeight="31.0" prefWidth="28.0" text="99+" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" />
                                  </children>
                               </AnchorPane>
                             <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="620.0" prefWidth="1280.0">
@@ -699,24 +470,24 @@
                                                                   <AnchorPane fx:id="frequentMiddle" layoutX="333.0" layoutY="14.0" prefHeight="200.0" prefWidth="340.0" style="-fx-background-color: #999999;" />
                                                                   <AnchorPane fx:id="welcomeWindow" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: -fx-background;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                      <children>
-                                                                        <Label alignment="CENTER" layoutX="238.0" layoutY="14.0" prefHeight="83.0" prefWidth="559.0" text="Välkommen till i-Mat">
+                                                                        <Label alignment="CENTER" layoutX="238.0" layoutY="14.0" prefHeight="83.0" prefWidth="559.0" styleClass="text-big" text="Välkommen till i-Mat">
                                                                            <font>
                                                                               <Font size="56.0" />
                                                                            </font>
                                                                         </Label>
-                                                                        <Label alignment="CENTER" layoutX="407.0" layoutY="97.0" text="Snabb guide för att hjälpa din upplevelse!" />
-                                                                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="305.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+                                                                        <Label alignment="CENTER" layoutX="407.0" layoutY="97.0" styleClass="text-medium" text="Snabb guide för att hjälpa din upplevelse!" />
+                                                                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="250.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
                                                                            <image>
                                                                               <Image url="@../GreenPictures/UserIcon.png" />
                                                                            </image>
                                                                         </ImageView>
-                                                                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="305.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
+                                                                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="250.0" layoutY="177.0" pickOnBounds="true" preserveRatio="true">
                                                                            <image>
                                                                               <Image url="@../GreenPictures/ShoppingCartImage.png" />
                                                                            </image>
                                                                         </ImageView>
-                                                                        <Label layoutX="338.0" layoutY="129.0" prefHeight="17.0" prefWidth="442.0" text="Under denna knapp hittar du dina favoriter, gamla ordar och sätter upp din profil! " />
-                                                                        <Label layoutX="338.0" layoutY="189.0" text="Här har du din varukorg samt kassa!" />
+                                                                        <Label layoutX="285.0" layoutY="128.0" prefHeight="27.0" prefWidth="654.0" styleClass="text-medium" text="Under denna knapp hittar du dina favoriter, gamla ordar och sätter upp din profil! " />
+                                                                        <Label layoutX="285.0" layoutY="176.0" styleClass="text-medium" text="Här har du din varukorg samt kassa!" />
                                                                      </children>
                                                                   </AnchorPane>
                                                                </children>
@@ -737,6 +508,258 @@
                               </AnchorPane>
                           </items>
                         </SplitPane>
+                        <StackPane fx:id="multiWindow" prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane fx:id="userMenyAnchorPane" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" styleClass="green-outer-border-style">
+                                       <children>
+                                          <AnchorPane fx:id="bestallningarMulti" layoutX="73.0" layoutY="123.0" onMouseClicked="#openOrderView" prefHeight="256.0" prefWidth="256.0" styleClass="green-border-style">
+                                             <children>
+                                                <Label alignment="CENTER" layoutX="50.0" layoutY="178.0" prefHeight="56.0" prefWidth="153.0" text="Beställningar" textFill="#519a7b">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="105.0" fitWidth="146.0" layoutX="69.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../GreenPictures/GreenCarImage.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </AnchorPane>
+                                          <Label fx:id="greetingMulti" layoutX="132.0" layoutY="40.0" prefHeight="53.0" prefWidth="743.0" text="Hej Jag!" textFill="#519a7b">
+                                             <font>
+                                                <Font size="32.0" />
+                                             </font>
+                                          </Label>
+                                          <AnchorPane fx:id="dinaUppgifterMulti" layoutX="709.0" layoutY="123.0" onMouseClicked="#openAccountView" prefHeight="256.0" prefWidth="256.0" styleClass="green-border-style">
+                                             <children>
+                                                <Label alignment="CENTER" layoutX="50.0" layoutY="178.0" prefHeight="56.0" prefWidth="153.0" text="Dina uppgifter" textFill="#519a7b">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="105.0" fitWidth="146.0" layoutX="90.0" layoutY="47.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../GreenPictures/GreenDocumentsImage.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </AnchorPane>
+                                          <Button layoutX="23.0" layoutY="23.0" mnemonicParsing="false" onAction="#closeUserOptionsView" prefHeight="18.0" prefWidth="18.0" style="-fx-background-color: #FFFFFF;">
+                                             <graphic>
+                                                <ImageView fitHeight="54.0" fitWidth="34.0" onMouseClicked="#closeUserOptionsView" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../GreenPictures/Cross.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <AnchorPane fx:id="dinaUppgifterMulti1" layoutX="400.0" layoutY="123.0" onMouseClicked="#openFavorites" prefHeight="256.0" prefWidth="256.0" styleClass="green-border-style">
+                                             <children>
+                                                <Label alignment="CENTER" layoutX="50.0" layoutY="178.0" prefHeight="56.0" prefWidth="153.0" text="Favoriter" textFill="#519a7b">
+                                                   <font>
+                                                      <Font size="20.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="75.0" layoutY="14.0" text="♡" textFill="#519a7b">
+                                                   <font>
+                                                      <Font size="150.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="favoriteMenuAnchorPane" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" styleClass="green-outer-border-style">
+                                       <children>
+                                          <Label alignment="CENTER" layoutX="132.0" layoutY="40.0" prefHeight="53.0" prefWidth="743.0" text="Favoriter" textFill="#519a7b" underline="true">
+                                             <font>
+                                                <Font size="32.0" />
+                                             </font>
+                                          </Label>
+                                          <Button layoutX="23.0" layoutY="23.0" mnemonicParsing="false" onAction="#closeAccountView" prefHeight="18.0" prefWidth="18.0" style="-fx-background-color: #FFFFFF;">
+                                             <graphic>
+                                                <ImageView fitHeight="54.0" fitWidth="34.0" onMouseClicked="#closeUserOptionsView" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../GreenPictures/Cross.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <ScrollPane layoutX="193.0" layoutY="115.0" prefHeight="289.0" prefWidth="631.0">
+                                             <content>
+                                                <FlowPane fx:id="favoritesFlowPane" prefHeight="286.0" prefWidth="662.0" />
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="multiGamlaBPane" prefHeight="200.0" prefWidth="200.0">
+                                 <children>
+                                    <StackPane layoutX="138.0" layoutY="136.0" minHeight="-Infinity" prefHeight="550.0" prefWidth="1024.0">
+                                       <children>
+                                          <AnchorPane fx:id="multimultiGamla" prefHeight="720.0" prefWidth="1024.0" style="-fx-background-color: f8f8f8;" styleClass="multi-best-green">
+                                             <children>
+                                                <Label alignment="CENTER" layoutX="406.0" layoutY="15.0" text="Gamla Beställningar" textFill="#519a7b" underline="true">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button layoutX="18.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeOrderView" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #f8f8f8;">
+                                                   <graphic>
+                                                      <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../GreenPictures/BackwardsarrowWithCircle.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <ScrollPane hbarPolicy="NEVER" layoutX="181.0" layoutY="93.0" prefHeight="513.0" prefWidth="660.0" vbarPolicy="ALWAYS">
+                                                   <content>
+                                                      <FlowPane fx:id="oldOrdersFlowPane" prefHeight="507.0" prefWidth="646.0" />
+                                                   </content>
+                                                </ScrollPane>
+                                             </children>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="expandedOrderView" minWidth="-Infinity" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: f8f8f8;" styleClass="multi-best-green">
+                                             <children>
+                                                <Label fx:id="orderNumber" alignment="CENTER" layoutX="404.0" layoutY="14.0" prefHeight="35.0" prefWidth="203.0" text="7564774" textFill="#519a7b" underline="true">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Label>
+                                                <Button layoutX="18.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#closeExpanded" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #f8f8f8;">
+                                                   <graphic>
+                                                      <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../GreenPictures/BackwardsarrowWithCircle.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <ScrollPane hbarPolicy="NEVER" layoutX="187.0" layoutY="93.0" prefHeight="400.0" prefWidth="638.0" vbarPolicy="ALWAYS">
+                                                   <content>
+                                                      <FlowPane fx:id="multigammelgam" prefHeight="399.0" prefWidth="622.0" style="-fx-background-color: #f8f8f8;" />
+                                                   </content>
+                                                </ScrollPane>
+                                                <Label layoutX="364.0" layoutY="45.0" text="Datum" textFill="#519a7b">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="dateOldOrder" alignment="CENTER" layoutX="323.0" layoutY="70.0" prefHeight="25.0" prefWidth="129.0" text="1984-04-20" textFill="#519a7b">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label layoutX="583.0" layoutY="45.0" text="Pris" textFill="#519a7b">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="totalPriceOldOrder" layoutX="583.0" layoutY="70.0" text="123,45 kr" textFill="#519a7b">
+                                                   <font>
+                                                      <Font size="16.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </StackPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="accountPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+                                 <children>
+                                    <AnchorPane layoutX="138.0" layoutY="136.0" prefHeight="432.0" prefWidth="1024.0" style="-fx-background-color: #FFFFFF;" styleClass="green-outer-border-style">
+                                       <children>
+                                          <ComboBox fx:id="cardTypeCombo" layoutX="597.0" layoutY="70.0" prefHeight="45.0" prefWidth="280.0" promptText="Korttyp" styleClass="green-border-style" />
+                                          <TextField fx:id="numberTextField" layoutX="597.0" layoutY="210.0" prefHeight="45.0" prefWidth="280.0" promptText="XXXX-XXXX-XXXX-XXXX">
+                                             <styleClass>
+                                                <String fx:value="green-border-style" />
+                                                <String fx:value="gray-background" />
+                                             </styleClass>
+                                          </TextField>
+                                          <ComboBox fx:id="monthCombo" layoutX="597.0" layoutY="280.0" prefHeight="45.0" prefWidth="68.0" promptText="MM" styleClass="green-border-style" />
+                                          <ComboBox fx:id="yearCombo" layoutX="737.0" layoutY="280.0" prefHeight="45.0" prefWidth="64.0" promptText="ÅÅ" styleClass="green-border-style" />
+                                          <Label layoutX="695.0" layoutY="285.0" text="/" textAlignment="RIGHT">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="cvcField" layoutX="833.0" layoutY="280.0" prefHeight="45.0" prefWidth="43.0" promptText="CVC">
+                                             <styleClass>
+                                                <String fx:value="green-border-style" />
+                                                <String fx:value="gray-background" />
+                                             </styleClass>
+                                          </TextField>
+                                          <Label fx:id="purchasesLabel" layoutX="60.0" layoutY="374.0" text="3747 tidigare inköp hos iMat" />
+                                          <Label alignment="CENTER" layoutX="423.0" layoutY="14.0" prefHeight="35.0" prefWidth="177.0" text="Dina Uppgifter" textFill="#519a7b" underline="true">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="dinaUppgifterEfternamn" layoutX="143.0" layoutY="140.0" prefHeight="45.0" prefWidth="280.0" promptText="Efternamn">
+                                             <styleClass>
+                                                <String fx:value="green-border-style" />
+                                                <String fx:value="gray-background" />
+                                             </styleClass>
+                                          </TextField>
+                                          <Button fx:id="dinaUppgifterAngra" layoutX="288.0" layoutY="350.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="132.0" styleClass="green-border-style" text="Ångra" textFill="#519a7b">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Button>
+                                          <Button fx:id="dinaUppgifterSpara" layoutX="600.0" layoutY="350.0" mnemonicParsing="false" onAction="#saveUser" prefHeight="46.0" prefWidth="132.0" styleClass="green-border-style" text="Spara" textFill="#519a7b">
+                                             <font>
+                                                <Font size="24.0" />
+                                             </font>
+                                          </Button>
+                                          <TextField fx:id="dinaUppgifterNamn" layoutX="143.0" layoutY="70.0" prefHeight="45.0" prefWidth="280.0" promptText="Förnamn">
+                                             <styleClass>
+                                                <String fx:value="green-border-style" />
+                                                <String fx:value="gray-background" />
+                                             </styleClass>
+                                          </TextField>
+                                          <TextField fx:id="dinaUppgifterLeveransadress" layoutX="143.0" layoutY="280.0" prefHeight="45.0" prefWidth="280.0" promptText="Leveransadress">
+                                             <styleClass>
+                                                <String fx:value="green-border-style" />
+                                                <String fx:value="gray-background" />
+                                             </styleClass>
+                                          </TextField>
+                                          <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#openUserOptionsView" prefHeight="27.0" prefWidth="27.0" style="-fx-background-color: #FFFFFF;">
+                                             <graphic>
+                                                <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../GreenPictures/BackwardsarrowWithCircle.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <TextField fx:id="dinaUppgifterMail" layoutX="143.0" layoutY="210.0" prefHeight="45.0" prefWidth="280.0" promptText="Mail">
+                                             <styleClass>
+                                                <String fx:value="green-border-style" />
+                                                <String fx:value="gray-background" />
+                                             </styleClass>
+                                          </TextField>
+                                          <TextField fx:id="nameTextField" layoutX="597.0" layoutY="140.0" prefHeight="45.0" prefWidth="280.0" promptText="Kortinnehavare">
+                                             <styleClass>
+                                                <String fx:value="gray-background" />
+                                                <String fx:value="green-border-style" />
+                                             </styleClass>
+                                          </TextField>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </StackPane>
                      </children>
                   </StackPane>
                </children>

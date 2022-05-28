@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="340.0" styleClass="green-border-box" stylesheets="@IMat.css" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="frequentImage" fitHeight="164.0" fitWidth="184.0" layoutX="14.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
@@ -15,12 +14,12 @@
             <Image url="@../../../../../../.dat215/imat/images/product_1.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="215.0" layoutY="117.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="52.0" prefWidth="97.0" text="Köp Nu!">
+      <Button layoutX="215.0" layoutY="117.0" mnemonicParsing="false" onAction="#handleAddAction" prefHeight="52.0" prefWidth="97.0" styleClass="text-medium-bold" text="Köp Nu!">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Button>
-      <Label fx:id="frequentName" layoutX="201.0" layoutY="31.0" text="Label">
+      <Label fx:id="frequentName" layoutX="201.0" layoutY="31.0" styleClass="text-medium" text="Label">
          <font>
             <Font size="19.0" />
          </font>
