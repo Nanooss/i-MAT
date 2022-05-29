@@ -67,6 +67,13 @@
     -fx-background-radius: 6;
 }
 
+.button-varukorg-startsida{
+    -fx-background-color:  #e3e3e3;
+    -fx-background-radius:  16;
+    -fx-border-color:  #384B42;
+    -fx-border-radius: 16;
+}
+
 .green-border-box{
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 16px;

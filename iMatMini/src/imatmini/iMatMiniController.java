@@ -596,12 +596,23 @@ public class iMatMiniController implements Initializable, ShoppingCartListener {
     //Orders
     public void loadOrders(){
         oldOrdersFlowPane.getChildren().clear();
+        List<Order> reverseOrderList = reverseOrderList(model.getOrders());
         System.out.println(model.getOrders());
         int i = 0;
-        for ( Order order : model.getOrders()) {
+        for ( Order order : reverseOrderList) {
             oldOrdersFlowPane.getChildren().add(new historyItem(order, i ,this));
             i+=1;
         }
+    }
+
+    public List<Order> reverseOrderList(List<Order> order){
+        List<Order> newOrderList = new ArrayList<>();
+
+        for(int i=1;i<=order.size();i++){
+            newOrderList.add(order.get(order.size()-i));
+        }
+
+        return newOrderList;
     }
 
     public void closeExpanded(){

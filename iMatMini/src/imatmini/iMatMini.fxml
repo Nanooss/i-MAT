@@ -129,6 +129,7 @@
                                        <styleClass>
                                           <String fx:value="black-thin-round-border" />
                                           <String fx:value="pliancy-pressed" />
+                                          <String fx:value="pliancy-hover" />
                                        </styleClass>
                                     </Button>
                                     <Button fx:id="UserIconButton" layoutX="1143.0" layoutY="26.0" mnemonicParsing="false" onAction="#openUserAction" prefHeight="48.0" prefWidth="48.0">
@@ -535,23 +536,25 @@
                                           <Font size="36.0" />
                                        </font>
                                     </Label>
-                                    <AnchorPane layoutX="40.0" layoutY="18.0" onMouseClicked="#backToHome" prefHeight="64.0" prefWidth="200.0" style="-fx-background-color: #e3e3e3; -fx-background-radius: 16; -fx-border-color: #384B42; -fx-border-radius: 16;">
+                                    <AnchorPane layoutX="40.0" layoutY="18.0" prefHeight="64.0" prefWidth="200.0" stylesheets="@IMat.css">
                                        <children>
-                                          <Label layoutX="76.0" layoutY="14.0" prefHeight="28.0" prefWidth="100.0" text="Startsida">
+                                          <Label alignment="CENTER_RIGHT" layoutY="-2.0" onMouseClicked="#backToHome" prefHeight="64.0" prefWidth="198.0" stylesheets="@IMat.css" text="Startsida    ">
                                              <font>
                                                 <Font size="24.0" />
                                              </font>
+                                             <styleClass>
+                                                <String fx:value="button-varukorg-startsida" />
+                                                <String fx:value="text-medium-big" />
+                                                <String fx:value="pliancy-hover" />
+                                                <String fx:value="pliancy-pressed" />
+                                             </styleClass>
                                           </Label>
-                                          <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="25.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="30.0" layoutY="14.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../GreenPictures/Icons/home.png" />
                                              </image>
                                           </ImageView>
                                        </children>
-                                       <styleClass>
-                                          <String fx:value="pliancy-hover" />
-                                          <String fx:value="pliancy-pressed" />
-                                       </styleClass>
                                     </AnchorPane>
                                  </children>
                               </AnchorPane>
